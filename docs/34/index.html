@@ -1,0 +1,757 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../33/" rel="prev"/>
+<link href="../35/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.1" name="generator"/>
+<title>34 - obsidian-mkdocs template</title>
+<link href="../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="pink" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#bookstore_projectsettingspy">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="obsidian-mkdocs template" class="md-header__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            obsidian-mkdocs template
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              34
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="pink" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="pink" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="obsidian-mkdocs template" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    obsidian-mkdocs template
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Obsidian Notes
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Features
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/LaTeX%20Math%20Support/">
+        LaTeX Math Support
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/Mermaid%20Diagrams/">
+        Mermaid diagrams
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/Text%20Formatting/">
+        Text Formatting
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Topic 1
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Topic 1
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Topic%201/Note%201/">
+        Note 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Topic%201/Note%202/">
+        Note 2
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Docs
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Docs
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+        Django
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../00_por_que_django/">
+        ¿Por qué Django?
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01_introduccion/">
+        1 Introducción
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02_configuracion_inicial/">
+        2 Configuración inicial
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03_hello_world_app/">
+        3. Hello World
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../04_pages_app/">
+        4 Pages app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../05_message_board_app/">
+        5. Message Board app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../06_blog_app/">
+        6. Blog app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../07_formularios/">
+        7. Formularios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../08_cuentas_de_usuarios/">
+        8. Cuentas de Usuarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../09_modelo_de_usuario_personalizado/">
+        9. Modelo de usuario personalizado
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10_autenticacion_de_usuarios/">
+        10. Autenticación de usuarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11_bootstrap/">
+        11. Bootstrap
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../12_cambio_y_restauracion_de_contrasenas/">
+        12. Cambio y Restauración de Contraseñas
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../13_email/">
+        13. Correo electrónico
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../14_newspaper_app/">
+        14. Newspaper app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../15_permisos_y_autorizacion/">
+        15. Permisos y Autorización
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../16_comentarios/">
+        16. Comentarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../17_docker/">
+        17. Docker
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../18_postgresql/">
+        18. PostgreSQL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../19_/">
+        19. Proyecto Bookstore
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../20_/">
+        Chapter 4: Pages App
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../21/">
+        21
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../22/">
+        22
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../23/">
+        23
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../24/">
+        24
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../25/">
+        25
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../26/">
+        26
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../27/">
+        27
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../30/">
+        30
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../31/">
+        31
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../32/">
+        32
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../33/">
+        33
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
+        34
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../35/">
+        35
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../36/">
+        36
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../conclusion/">
+        Conclusión
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../correo_en_django/">
+        Documentación Django
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../la_api_de_sendgrid/">
+        La API de SendGrid
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<p>Chapter 16: Performance
+The first priority for any website is that it must work properly and contain proper
+tests. But if your project is fortunate enough to receive a large amount of traffic the
+focus quickly shifts to performance and making things as efficient as possible. This is
+a fun and challenging exercise for many engineers, but it can also be a trap.
+The computer scientist Donald Knuth has a famous quote265 worth reading in its
+entirety:
+“The real problem is that programmers have spent far too much time worrying about
+efficiency in the wrong places and at the wrong times; premature optimization is the
+root of all evil (or at least most of it) in programming.”
+While it’s important to set up proper monitoring so you can optimize your project later
+on, don’t focus too much on it upfront. There’s no way to properly mimic production
+environments locally. And there is no way to predict exactly how a site’s traffic will
+look. But it is possible to spend far too much time seeking out tiny performance gains
+in the early stages instead of talking to users and making larger code improvements!
+In this chapter we’ll focus on the broad strokes of Django-related performance and
+highlight areas worth further investigation at scale. Generally speaking performance
+comes down to four major areas: optimizing database queries, caching, indexes, and
+compressing front-end assets like images, JavaScript, and CSS.
+265 http://www.paulgraham.com/knuth.html
+Chapter 16: Performance
+ 304
+django-debug-toolbar
+Before we can optimize our database queries we need to see them. And for this
+the default tool in the Django community is the third-party package django-debug-
+toolbar266 . It comes with a configurable set of panels to inspect the complete re-
+quest/response cycle of any given page.
+Per usual we can install it within Docker and stop our running containers.
+Command Line
+$ docker-compose exec web pipenv install django-debug-toolbar==2.0
+$ docker-compose down
+There are three separate configurations to set in our bookstore_project/settings.py
+file:
+1. INSTALLED_APPS
+2. Middleware
+3. INTERNAL_IPS
+First add Debug Toolbar to the INSTALLED_APPS configuration. Note that the proper
+name is debug_toolbar not django_debug_toolbar as might be expected.
+266 https://github.com/jazzband/django-debug-toolbar
+Chapter 16: Performance
+Code</p>
+<h1 id="bookstore_projectsettingspy">bookstore_project/settings.py<a class="headerlink" href="#bookstore_projectsettingspy" title="Permanent link">¶</a></h1>
+<p>INSTALLED_APPS = [
+'django.contrib.admin',
+'django.contrib.auth',
+'django.contrib.contenttypes',
+'django.contrib.sessions',
+'django.contrib.messages',
+'django.contrib.staticfiles',
+'django.contrib.sites',</p>
+<h1 id="third-party">Third-party<a class="headerlink" href="#third-party" title="Permanent link">¶</a></h1>
+<p>'crispy_forms',
+'allauth',
+'allauth.account',
+'debug_toolbar', # new
+305
+]</p>
+<h1 id="local">Local<a class="headerlink" href="#local" title="Permanent link">¶</a></h1>
+<p>'users.apps.UsersConfig',
+'pages.apps.PagesConfig',
+'books.apps.BooksConfig',
+'orders.apps.OrdersConfig',
+Second, add Debug Toolbar to the Middleware where it is primarily implemented.
+Chapter 16: Performance
+Code</p>
+<h1 id="bookstore_projectsettingspy_1">bookstore_project/settings.py<a class="headerlink" href="#bookstore_projectsettingspy_1" title="Permanent link">¶</a></h1>
+<p>MIDDLEWARE = [
+'django.middleware.security.SecurityMiddleware',
+'django.contrib.sessions.middleware.SessionMiddleware',
+'django.middleware.common.CommonMiddleware',
+'django.middleware.csrf.CsrfViewMiddleware',
+'django.contrib.auth.middleware.AuthenticationMiddleware',
+'django.contrib.messages.middleware.MessageMiddleware',
+'django.middleware.clickjacking.XFrameOptionsMiddleware',
+'debug_toolbar.middleware.DebugToolbarMiddleware', # new
+]
+306
+And third, set the INTERNAL_IPS267 as well. If we were not in Docker this could be
+set to '127.0.0.1', however, since we’re running our web server within Docker an
+additional step is required so that it matches the machine address of Docker. Add the
+following lines at the bottom of bookstore_project/settings.py.
+Code</p>
+<h1 id="bookstore_projectsettingspy_2">bookstore_project/settings.py<a class="headerlink" href="#bookstore_projectsettingspy_2" title="Permanent link">¶</a></h1>
+<p>...</p>
+<h1 id="django-debug-toolbar">django-debug-toolbar<a class="headerlink" href="#django-debug-toolbar" title="Permanent link">¶</a></h1>
+<p>import socket
+hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
+Phew. That looks a bit scary, but basically it ensures that our INTERNAL_IPS matches
+that of our Docker host.
+267 https://docs.djangoproject.com/en/2.2/ref/settings/#internal-ips
+Chapter 16: Performance
+ 307
+Now rebuild the base image so it contains the package and the updated settings
+configuration.
+Command Line
+$ docker-compose up -d --build
+There’s one last step and that is to update our URLconf. We only want Debug Toolbar
+to appear if DEBUG is true so we’ll add logic to display it only in this case.
+Code</p>
+<h1 id="bookstore_projecturlspy">bookstore_project/urls.py<a class="headerlink" href="#bookstore_projecturlspy" title="Permanent link">¶</a></h1>
+<p>...
+if settings.DEBUG:
+import debug_toolbar
+urlpatterns = [
+path('<strong>debug</strong>/', include(debug_toolbar.urls)),
+] + urlpatterns
+Now if you refresh the homepage you’ll see the django-debug-toolbar on the righthand
+side.
+Chapter 16: Performance
+ 308
+Debug Toolbar
+If you click the “Hide” link on top it becomes a much smaller sidebar on the righthand
+side of the page.
+Analyzing Pages
+Debug Toolbar has many possible customizations268 but the default settings visible tell
+us a lot about our homepage. For instance, we can see the current version of Django
+being used as well as the Time it took to load the page. Also the specific request called
+268 https://django-debug-toolbar.readthedocs.io/en/latest/index.html
+Chapter 16: Performance
+ 309
+which was HomePageView. This may seem obvious but on large codebases especially if
+you are jumping in as a new developer, it may not be obvious which view is calling
+which page. Debug Toolbar is a helpful quickstart to understanding existing sites.
+Probably the most useful item, however, is SQL which shows two queries are being run
+and the time for them. If you click on it even more data appears.
+Debug Toolbar
+Large and poorly optimized sites can have hundreds or even thousands of queries
+being run on a single page!
+Chapter 16: Performance
+ 310
+select_related and prefetch_related
+What are the options if you do find yourself working on a Django site with way too
+many SQL queries per page? In general, though, fewer large queries will be faster than
+many smaller queries, though it’s possible and required to test this in practice. Two
+common techniques for doing so are select_related()269 and prefetch_related()270.
+select_related is used for single-value relationships through a forward one-to-many
+or a one-to-one relationship. It creates a SQL join and includes the fields of the related
+object in the SELECT statement, which results in all related objects being included in a
+single more complex database query. This single query is typically more performant
+than multiple, smaller queries.
+prefetch_related is used for a set or list of objects like a many-to-many or many-to-
+one relationship. Under the hood a lookup is done for each relationship and the “join”
+occurs in Python, not SQL. This allows it to prefetch many-to-many and many-to-one
+objects, which cannot be done using select_related, in addition to the foreign key and
+one-to-one relationships that are supported by select_related.
+Implementing one or both on a website is a common first pass towards reducing
+queries and loading time for a given page.
+Caching
+Consider that our Bookstore project is a dynamic website. Each time a user requests a
+page our server has to make various calculations including database queries, template
+rendering, and so on before servicing it. This takes time and is much slower than
+simply reading a file from a static site where the content does not change.
+269 https://docs.djangoproject.com/en/2.2/ref/models/querysets/#select-related
+270 https://docs.djangoproject.com/en/2.2/ref/models/querysets/#prefetch-related
+Chapter 16: Performance
+ 311
+On large sites, though, this type of overhead can be quite slow and caching is one
+of the first solutions in a web developer’s tool bag. Implementing caching on our
+current project is definitely overkill, but we will nonetheless review the options and
+implement a basic version.
+A cache is an in-memory storing of an expensive calculation. Once executed it doesn’t
+need to be run again! The two most popular options are Memcached271 which features
+native Django support and Redis272 which is commonly implemented with the django-
+redis273 third-party package.
+Django has its own cache framework274 which includes four different caching options
+in descending order of granularity:
+1) The per-site cache275 is the simplest to set up and caches your entire site.
+2) The per-view cache276 lets you cache individual views.
+3) Template fragment caching277 lets you specify a specific section of a template to
+cache.
+4) The low-level cache API278 lets you manually set, retrieve, and maintain specific
+objects in the cache.
+Why not just cache everything all the time? One reason is that cache memory is
+expensive, as it’s stored as RAM: think about the cost of going from 8GB to 16GB of
+RAM on your laptop vs. 256GB to 512GB of hard drive space. Another is the cache must
+be “warm,” that is filled with updated content, so depending upon the needs of a site,
+optimizing the cache so it is accurate, but not wasteful, takes quite a bit of tuning.
+271 https://docs.djangoproject.com/en/2.2/topics/cache/#memcached
+272 https://redis.io/
+273 https://github.com/niwinz/django-redis
+274 https://docs.djangoproject.com/en/2.2/topics/cache/
+275 https://docs.djangoproject.com/en/2.2/topics/cache/#the-per-site-cache
+276 https://docs.djangoproject.com/en/2.2/topics/cache/#the-per-view-cache
+277 https://docs.djangoproject.com/en/2.2/topics/cache/#template-fragment-caching
+278 https://docs.djangoproject.com/en/2.2/topics/cache/#the-low-level-cache-api
+Chapter 16: Performance
+ 312
+If you wanted to implement per-site caching, which is the simplest approach, you’d
+add UpdateCacheMiddleware at the very top of the MIDDLEWARE configuration in bookstore_-
+project/settings.py and FetchFromCacheMiddleware at the very bottom. Also set three
+additional fields CACHE_MIDDLEWARE_ALIAS 279 , CACHE_MIDDLEWARE_SECONDS280and CACHE_MIDDLEWARE_KEY_PREFIX281 .
+Code</p>
+<h1 id="bookstore_projectsettingspy_3">bookstore_project/settings.py<a class="headerlink" href="#bookstore_projectsettingspy_3" title="Permanent link">¶</a></h1>
+<p>MIDDLEWARE = [
+'django.middleware.cache.UpdateCacheMiddleware', # new
+'django.middleware.security.SecurityMiddleware',
+'django.contrib.sessions.middleware.SessionMiddleware',
+'django.middleware.common.CommonMiddleware',
+'debug_toolbar.middleware.DebugToolbarMiddleware',
+'django.middleware.csrf.CsrfViewMiddleware',
+'django.contrib.auth.middleware.AuthenticationMiddleware',
+'django.contrib.messages.middleware.MessageMiddleware',
+'django.middleware.clickjacking.XFrameOptionsMiddleware',
+'debug_toolbar.middleware.DebugToolbarMiddleware',
+'django.middleware.cache.FetchFromCacheMiddleware', # new
+]
+,
+CACHE_MIDDLEWARE_ALIAS = 'default'
+CACHE_MIDDLEWARE_SECONDS = 604800
+CACHE_MIDDLEWARE_KEY_PREFIX = ''
+The only default you might want to adjust is CACHE_MIDDLEWARE_SECONDS which is the
+default number of seconds (600) to cache a page. After the period is up, the cache
+279 https://docs.djangoproject.com/en/2.2/ref/settings/#std:setting-CACHE_MIDDLEWARE_ALIAS
+280 https://docs.djangoproject.com/en/2.2/ref/settings/#cache-middleware-seconds
+281 https://docs.djangoproject.com/en/2.2/ref/settings/#cache-middleware-key-prefix
+Chapter 16: Performance
+ 313
+expires and becomes empty. A good default when starting out is 604800 seconds or
+1 week (60secs x 60minutes x 168hours) for a site with content that doesn’t change
+very often. But if you find your cache filling up rapidly or you are running a site where
+the content changes on a frequent basis, shortening this setting is a good first step.
+Implementing caching is strictly optional at this point though. Once a website is up
+and running the need for caching–per site, per page, and so on–will quickly become
+apparent. There is also extra complexity as Memcache must be run as a separate
+instance. On the hosting service Heroku, which we’ll use in chapter 18 for deployment,
+there is a free tier available via Memcachier282.
+Indexes
+Indexing283 is a common technique for speeding up database performance. It is a
+separate data structure that allows faster searches and is typically only applied to
+the primary key in a model. The downside is that indexes require additional space on
+a disk so they must be used with care.
+Tempting as it is to simply add indexes to primary keys from the beginning, it is better
+to start without them and only add them later based on production needs. A general
+rule of thumb is that if a given field is being used frequently, such as 10-25% of all
+queries, it is a prime candidate to be indexed.
+Historically an index field could be created by adding db_index=True to any model
+field. For example, if we wanted to add one to the id field in our Book model it would
+look as follows (don’t actually implement this though).
+282 https://elements.heroku.com/addons/memcachier
+283 https://en.wikipedia.org/wiki/Database_index
+Chapter 16: Performance
+Code</p>
+<h1 id="booksmodelspy">books/models.py<a class="headerlink" href="#booksmodelspy" title="Permanent link">¶</a></h1>
+<p>...
+class Book(models.Model):
+id = models.UUIDField(
+primary_key=True,
+db_index=True, # new
+default=uuid.uuid4,
+editable=False)
+...
+314
+This change would need to be added via a migration file and migrated.
+Starting in Django 1.11284 class-based model indexes were added so can include in the
+Meta section instead285 . So you could write the previous index as follows:
+Code</p>
+<h1 id="booksmodelspy_1">books/models.py<a class="headerlink" href="#booksmodelspy_1" title="Permanent link">¶</a></h1>
+<p>...
+class Book(models.Model):
+id = models.UUIDField(
+primary_key=True,
+default=uuid.uuid4,
+editable=False)
+...
+class Meta:
+indexes = [ # new
+284 https://docs.djangoproject.com/en/2.2/releases/1.11/#class-based-model-indexes
+285 https://docs.djangoproject.com/en/2.2/ref/models/options/#indexes
+Chapter 16: Performance
+models.Index(fields=['id'], name='id_index'),
+]
+permissions = [
+("special_status", "Can read all books"),
+]
+315
+Since we’ve changed the model we must create a migrations file and apply it.
+Command Line
+$ docker-compose exec web python manage.py makemigrations books
+$ docker-compose exec web python manage.py migrate
+django-extensions
+Another very popular third-party package for inspecting a Django project is django-
+extensions286 which adds a number of helpful custom extensions287.
+One that is particularly helpful is shell_plus288 which will autoload all models into the
+shell which makes working with the Django ORM much easier.
+Front-end Assets
+A final major source of bottlenecks in a website is loading front-end assets. CSS and
+JavaScript can become quite large and therefore tools like django-compressor289 can
+help to minimize their size.
+286 https://github.com/django-extensions/django-extensions
+287 https://django-extensions.readthedocs.io/en/latest/command_extensions.html
+288 https://django-extensions.readthedocs.io/en/latest/shell_plus.html
+289 https://github.com/django-compressor/django-compressor
+Chapter 16: Performance
+ 316
+Images are often the first place to look in terms of asset size. The static/media file set
+up we have in place will scale to a quite large size, but for truly large sites it is worth
+investigating the use of a Content Delivery Network (CDN)290 for images instead of
+storing them on the server filesystem.
+You can also serve different size images to users. For example, rather than shrink
+down a large book cover for a list or search page you could store a smaller thumbnail
+version instead and serve that where needed. The third-party easy-thumbnails291
+package is a good place to start for this.
+A fantastic free e-book on the topic is Essential Image Optimization292 by Addy
+Osmani that goes into depth on image optimization and automations.
+As a final check there are automated tests for front-end speed such as Google’s
+PageSpeed Insights 293 that will assign a score based on how quickly a page loads.
+Git
+There’s been a lot of code changes in this chapter so make sure to commit everything
+with Git.
+Command Line
+$ git status
+$ git add .
+$ git commit -m 'ch16'
+If you have any errors make sure to look at your logs with docker-compose logs and
+compare your code with the official source code on Github294 .
+290 https://en.wikipedia.org/wiki/Content_delivery_network
+291 https://github.com/SmileyChris/easy-thumbnails
+292 https://images.guide/
+293 https://developers.google.com/speed/pagespeed/insights/
+294 https://github.com/wsvincent/djangoforprofessionals/tree/master/ch16-performance
+Chapter 16: Performance
+ 317
+Conclusion
+There is an almost endless list of performance optimizations that can be applied to
+a project. But take care to recall Donald Knuth’s sage advice and not go too crazy on
+this. Bottlenecks will reveal themselves in production and should largely be addressed
+then; not in advance.
+You should remember that performance problems are a good problem to have! They
+are fixable and mean that your project is being heavily used.</p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.b78d2936.min.js"></script>
+<script src="../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
+</html>

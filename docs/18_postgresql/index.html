@@ -1,0 +1,744 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../17_docker/" rel="prev"/>
+<link href="../19_/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.1" name="generator"/>
+<title>18. PostgreSQL - obsidian-mkdocs template</title>
+<link href="../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="pink" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#18-postgresql">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="obsidian-mkdocs template" class="md-header__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            obsidian-mkdocs template
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              18. PostgreSQL
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="pink" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="pink" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="obsidian-mkdocs template" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    obsidian-mkdocs template
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Obsidian Notes
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Features
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/LaTeX%20Math%20Support/">
+        LaTeX Math Support
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/Mermaid%20Diagrams/">
+        Mermaid diagrams
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/Text%20Formatting/">
+        Text Formatting
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Topic 1
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Topic 1
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Topic%201/Note%201/">
+        Note 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Topic%201/Note%202/">
+        Note 2
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Docs
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Docs
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+        Django
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../00_por_que_django/">
+        ¿Por qué Django?
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01_introduccion/">
+        1 Introducción
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02_configuracion_inicial/">
+        2 Configuración inicial
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03_hello_world_app/">
+        3. Hello World
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../04_pages_app/">
+        4 Pages app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../05_message_board_app/">
+        5. Message Board app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../06_blog_app/">
+        6. Blog app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../07_formularios/">
+        7. Formularios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../08_cuentas_de_usuarios/">
+        8. Cuentas de Usuarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../09_modelo_de_usuario_personalizado/">
+        9. Modelo de usuario personalizado
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10_autenticacion_de_usuarios/">
+        10. Autenticación de usuarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11_bootstrap/">
+        11. Bootstrap
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../12_cambio_y_restauracion_de_contrasenas/">
+        12. Cambio y Restauración de Contraseñas
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../13_email/">
+        13. Correo electrónico
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../14_newspaper_app/">
+        14. Newspaper app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../15_permisos_y_autorizacion/">
+        15. Permisos y Autorización
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../16_comentarios/">
+        16. Comentarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../17_docker/">
+        17. Docker
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          18. PostgreSQL
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        18. PostgreSQL
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#181-empezando">
+    18.1. Empezando
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#182-docker">
+    18.2. Docker
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#183-modo-independiente">
+    18.3. Modo Independiente
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#194-postgresql">
+    19.4. PostgreSQL
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#195-ajustes">
+    19.5. Ajustes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#195psycopg">
+    19.5.Psycopg
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#196-nueva-base-de-datos">
+    19.6. Nueva base de datos
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#197-git">
+    19.7. Git
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#198-conclusion">
+    19.8. Conclusión
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../19_/">
+        19. Proyecto Bookstore
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../20_/">
+        Chapter 4: Pages App
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../21/">
+        21
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../22/">
+        22
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../23/">
+        23
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../24/">
+        24
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../25/">
+        25
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../26/">
+        26
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../27/">
+        27
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../30/">
+        30
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../31/">
+        31
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../32/">
+        32
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../33/">
+        33
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../34/">
+        34
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../35/">
+        35
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../36/">
+        36
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../conclusion/">
+        Conclusión
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../correo_en_django/">
+        Documentación Django
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../la_api_de_sendgrid/">
+        La API de SendGrid
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#181-empezando">
+    18.1. Empezando
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#182-docker">
+    18.2. Docker
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#183-modo-independiente">
+    18.3. Modo Independiente
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#194-postgresql">
+    19.4. PostgreSQL
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#195-ajustes">
+    19.5. Ajustes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#195psycopg">
+    19.5.Psycopg
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#196-nueva-base-de-datos">
+    19.6. Nueva base de datos
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#197-git">
+    19.7. Git
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#198-conclusion">
+    19.8. Conclusión
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="18-postgresql">18. PostgreSQL<a class="headerlink" href="#18-postgresql" title="Permanent link">¶</a></h1>
+<p>Una de las diferencias más inmediatas entre trabajar en una "aplicación de juguete" en Django y una aplicación lista para producción es la base de datos. Django se suministra con <a href="https://sqlite.org/index.html">SQLite</a> como opción predeterminada para el desarrollo local porque es pequeña, rápida y basada en archivos, lo que la hace fácil de usar. No se requiere ninguna instalación o configuración adicional.
+Sin embargo, esta comodidad tiene un coste. En general, SQLite no es una buena elección de base de datos para sitios web profesionales. Por lo tanto, aunque está bien usar SQLite localmente mientras se hace un prototipo de una idea, es raro usar realmente SQLite como la base de datos en un proyecto de producción.
+Django se suministra con soporte incorporado para <a href="https://docs.djangoproject.com/es/3.0/ref/databases/">cuatro bases de datos</a>: SQLite, PostgreSQL, MySQL y Oracle. Utilizaremos <a href="https://www.postgresql.org/">PostgreSQL</a> en este libro ya que es la opción más popular para los desarrolladores de Django, sin embargo, la belleza del <strong>ORM</strong> de Django es que incluso si quisiéramos utilizar MySQL u Oracle, el código real de Django que escribamos será casi idéntico. El ORM de Django se encarga de la traducción del código Python a las bases de datos por uno, lo cual es bastante sorprendente si se piensa.
+El reto de utilizar estas tres bases de datos es que cada una de ellas debe estar instalada y funcionar localmente si se quiere imitar fielmente un entorno de producción en la computadora local. ¡Y eso es lo que se quiere! Aunque Django se encarga de los detalles del cambio entre bases de datos, inevitablemente hay pequeños errores difíciles de detectar que pueden surgir si se utiliza SQLite para el desarrollo local, pero una base de datos diferente en producción.
+Por lo tanto, la mejor práctica es usar la misma base de datos localmente y en producción.
+Se comenzará un nuevo proyecto Django con una base de datos SQLite y luego se pasará a Docker y PostgreSQL.</p>
+<h2 id="181-empezando">18.1. Empezando<a class="headerlink" href="#181-empezando" title="Permanent link">¶</a></h2>
+<p>Crear un nuevo directorio <code>postgresql</code> para el nuevo código.</p>
+<pre><code class="language-bash">$ cd ..
+$ mkdir postgresql &amp;&amp; cd postgresql
+</code></pre>
+<p>Ahora instalar Django, iniciar el shell y crear un proyecto básico de Django llamado <code>postgresql_-project</code>. No olvidar el punto... ¡al final del comando!</p>
+<pre><code class="language-bash">$ pipenv install django
+$ pipenv shell
+(postgresql) $ django-admin startproject postgresql_project .
+</code></pre>
+<p>Hasta ahora todo bien. Ahora se puede migrar la base de datos para inicializarla y usar el servidor de ejecución para iniciar el servidor local.</p>
+<blockquote>
+<p><strong>NOTA</strong></p>
+<p>Normalmente no se recomienda ejecutar la migración en nuevos proyectos hasta que se haya configurado un <strong>modelo de usuario personalizado</strong>. De lo contrario, Django vinculará la base de datos al modelo de usuario incorporado, que es difícil de modificar más adelante en el proyecto. Se cubrirá esto adecuadamente más adelante, pero se está aquí principalmente con fines de demostración, usar el modelo de usuario por defecto aquí es una excepción por una vez.</p>
+</blockquote>
+<pre><code>(postgresql) $ python manage.py migrate
+(postgresql) $ python manage.py runserver
+</code></pre>
+<p>Confirmar que todo funciona navegando a http://127.0.0.1:8000 en el navegador. Puede que se necesite refrescar la página, pero se debería ver la conocida página de bienvenida de Django.
+Detener el servidor local con <code>&lt;Control&gt;+C</code> y luego usar el comando <code>ls</code> para listar todos los archivos y directorios.</p>
+<pre><code class="language-bash">(postresql) $ ls
+Pipfile   Pipfile.lock   db.sqlite3   manage.py   postgresql_project
+</code></pre>
+<h2 id="182-docker">18.2. Docker<a class="headerlink" href="#182-docker" title="Permanent link">¶</a></h2>
+<p>Para pasar a Docker, primero hay que salir del entorno virtual y luego crear un <code>Dockerfile</code>
+y los archivos <code>docker-compose.yml</code> que controlarán la imagen y el contenedor Docker
+respectivamente.</p>
+<pre><code class="language-bash">(postgresql) $ exit
+$ touch Dockerfile
+$ touch docker-compose.yml
+</code></pre>
+<p>El <code>Dockerfile</code> es el mismo del capítulo anterior.</p>
+<pre><code class="language-Dockerfile"># Pull base image
+FROM python:3.8
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+# Set work directory
+WORKDIR /code
+# Install dependencies
+COPY Pipfile Pipfile.lock /code/
+RUN pip install pipenv &amp;&amp; pipenv install --system
+# Copy project
+COPY . /code/
+</code></pre>
+<p>Go ahead and build the initial image now using the docker build . command.
+Did you notice that the Dockerfile built an image much faster this time around? That’s
+because Docker looks locally on your computer first for a specific image. If it doesn’t
+find an image locally it will then download it. And since many of these images were
+already on the computer from the previous chapter, Docker didn’t need to download
+them all again!
+Time now for the docker-compose.yml file which also matches what we saw in the previous
+Chapter.</p>
+<pre><code class="language-yml">docker-compose.yml
+version: '3.8'
+services:
+web:
+build: .
+command: python /code/manage.py runserver 0.0.0.0:8000
+volumes:
+- .:/code
+ports:
+- 8000:8000
+</code></pre>
+<h2 id="183-modo-independiente">18.3. Modo Independiente<a class="headerlink" href="#183-modo-independiente" title="Permanent link">¶</a></h2>
+<p>Ahora se pondrá en marcha el contenedor, pero esta vez en modo 'detached', lo que requiere la bandera <code>-d</code> o <code>-detach</code>.</p>
+<pre><code class="language-bash">$ docker-compose up -d
+</code></pre>
+<p>El modo independiente ejecuta los contenedores en <a href="https://docs.docker.com/compose/reference/up/"><em>background</em></a>, lo que significa que se puede usar una unica consola de línea de comandos sin necesidad de abrir una separada. Esto ahorra tener que cambiar constantemente entre dos pestañas de línea de comandos. La desventaja es que si/cuando hay un error, la salida no siempre será visible. Así que si pantalla no coincide con lo descrito aquí, probar a escribir los logs de <code>docker-compose</code> para ver la salida actual y depurar cualquier problema.</p>
+<p>Es probable que se vea una "Warning: Image for service web was built because it did not already exists" (Advertencia: La imagen para el servicio web se construyó porque no existía) al final del comando. Docker creó automáticamente una nueva imagen dentro del contenedor. Como se verá más adelante, es necesario añadir la bandera <code>--build</code> para forzar la construcción de una imagen cuando se actualizan los paquetes de software porque, de forma predeterminada, Docker buscará una copia local en la caché del software y utilizará la que mejore el rendimiento.</p>
+<p>Para confirmar que las cosas funcionan correctamente, volver a http://127.0.0.1:8000/ en el navegador web.</p>
+<p>Como ahora se está trabajando dentro de Docker en lugar de hacerlo localmente, se debe preceder los comandos tradicionales con <code>docker-compose exec [servicio]</code> donde se especifica el nombre del servicio. Por ejemplo, para crear una cuenta de superusuario en lugar de escribir <code>python manage.py createsuperuser</code>, el comando actualizado se vería ahora como la línea de abajo, usando el servicio web.</p>
+<pre><code class="language-bash">$ docker-compose exec web python manage.py createsuperuser
+</code></pre>
+<p>Como nombre de usuario elegir <code>sqliteadmin</code>, <code>sqliteadmin@email.com</code> como dirección de correo electrónico, y seleccionar una contraseña a discreción. navegue directamente al administrador en http://127.0.0.1:8000/admin e inicie sesión.</p>
+<p>Será redirigido a la página principal del administrador. Notar en la esquina superior derecha que <code>sqliteadmin</code> es el nombre de usuario.</p>
+<p>Si se hace clic en el botón <code>Users</code> se llega a la página de Usuarios donde se puede confirmar que sólo se ha creado un usuario.</p>
+<p>Es importante destacar otro aspecto de Docker en este punto: hasta ahora se ha estado actualizando la base de datos, representada actualmente por el archivo <code>db.sqlite3</code>, dentro de Docker.
+Eso significa que el archivo actual <code>db.sqlite3</code> está cambiando cada vez. Y gracias a los volúmenes montados en la configuración <code>docker-compose.yml</code> cada cambio en el archivo ha sido copiado en un archivo <code>db.sqlite3</code> en el ordenador local también. Se podría salir de Docker, iniciar el shell, iniciar el servidor con <code>python manage.py runserver</code>, y ver exactamente el mismo inicio de sesión de administrador en este punto porque la base de datos subyacente  SQLite es la misma.</p>
+<h2 id="194-postgresql">19.4. PostgreSQL<a class="headerlink" href="#194-postgresql" title="Permanent link">¶</a></h2>
+<p>Ahora es el momento de cambiar a PostgreSQL, que requiere tres pasos adicionales:</p>
+<p>1.- Instalar un adaptador de base de datos, <code>psycopg2</code>, para que Python pueda hablar con PostgreSQL
+2.- Actualizar la configuración de la BASE DE DATOS en nuestro archivo <code>settings.py</code>
+3.- Instalar y ejecutar PostgreSQL localmente</p>
+<p>¿Listo? Aquí vamos. Detener el contenedor Docker en marcha con <code>docker-compose down</code>.</p>
+<pre><code class="language-bash">$ docker-compose down
+Stopping postgresql_web_1 ... done
+Removing postgresql_web_1 ... done
+Removing network postgresql_default
+</code></pre>
+<p>Entonces dentro del  archivo <code>docker-compose.yml</code> agregar un nuevo servicio llamado <code>db</code>. Esto significa que habrá dos servicios separados, cada uno un contenedor, corriendo dentro del  host Docker: <code>web</code> para el servidor local de Django y <code>db</code> para la base de datos PostgreSQL.
+La versión PostgreSQL será fijada a la última versión, la 11. Si no se hubiera especificado un número de versión y en su lugar se hubiera usado sólo <code>postgres</code>, entonces seria descargada la última versión de PostgreSQL aunque, en una fecha posterior, sea Postgres 12, que probablemente tenga requerimientos diferentes.
+Finalmente agregamos una línea de dependencias al servicio web ya que literalmente depende de la base de datos a ejecutar. Esto significa que <code>db</code> se iniciará antes que <code>web</code>.</p>
+<p>FICHERO: <code>docker-compose.yml</code></p>
+<pre><code class="language-yml">version: '3.7'
+38
+services:
+web:
+build: .
+command: python /code/manage.py runserver 0.0.0.0:8000
+volumes:
+- .:/code
+ports:
+- 8000:8000
+depends_on:
+- db
+db:
+image: postgres:11
+</code></pre>
+<p>Ahora ejecutar <code>docker-compose up -d</code> que reconstruirá la imagen y hará ponerse en marcha a dos contenedores, uno ejecutando PostgreSQL dentro de <code>db</code> y el otro el servidor web Django.</p>
+<pre><code>$ docker-compose up -d
+Creating network "postgresql_default" with the default driver
+...
+Creating postgresql_db_1 ... done
+Creating postgresql_web_1 ... done
+</code></pre>
+<p>Es importante señalar en este punto que una base de datos de producción como PostgreSQL no está basada en archivos. Se ejecuta completamente dentro del servicio <code>db</code> y es efímero; cuando se ejecuta <code>docker-compose down</code> todos los datos dentro de ella se perderán. Esto contrasta con el código en el contenedor web que tiene un montaje de volúmenes para sincronizar el código local y el de Docker.
+Próximamente se aprenderá cómo añadir un montaje de volúmenes para que en el servicio <code>db</code> persista la información de la base de datos.</p>
+<h2 id="195-ajustes">19.5. Ajustes<a class="headerlink" href="#195-ajustes" title="Permanent link">¶</a></h2>
+<p>Con el editor de texto, abrir el archivo <code>posgresql_project/settings.py</code> y bajar hasta la configuración de Bases de Datos. La configuración actual es esta:</p>
+<pre><code class="language-python">Code
+# postgresql_project/settings.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+</code></pre>
+<p>Por defecto, Django especifica sqlite3 como motor de la base de datos, le da el nombre de <code>db.sqlite3</code>, y lo coloca en <code>BASE_DIR</code> que implica al directorio de nivel de proyecto.  Dado que la estructura del directorio es a menudo un punto de confusión, "nivel de proyecto" significa el directorio superior del proyecto que contiene a <code>postgresql_project</code>, <code>manage.py</code>, <code>Pipfile</code>, <code>Pipfile.lock</code>, y el archivo <code>db.slite3</code>.</p>
+<pre><code class="language-bash">(postgresql) $ ls
+Dockerfile Pipfile.lock docker-compose.yml postgresql_project
+Pipfile db.sqlite3 manage.py
+</code></pre>
+<p>Para cambiar a PostgreSQL actualizaremos la configuración de <a href="https://docs.djangoproject.com/es/3.0/ref/settings/#engine">ENGINE</a>. PostgreSQL requiere un NOMBRE, USUARIO, CONTRASEÑA, HOST y PUERTO.
+Para mayor comodidad, configuraremos los tres primeros a postgres, el <code>HOST</code> a db que es el nombre de nuestro servicio establecido en <code>docker-compose.yml</code>, y el <code>PORT</code> a <code>5432</code> que es el predeterminado Puerto PostgreSQL.</p>
+<pre><code class="language-python">Code
+# postgresql_project/settings.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432
+    }
+}
+</code></pre>
+<p>Se verá un error si se refresca la página</p>
+<p>¿Qué es lo que está pasando? Dado que se está ejecutando Docker en modo <em>detach</em> con la bandera <code>-d</code> no está claro inmediatamente. Es hora de revisar los <em>logs</em>.</p>
+<pre><code>$ docker-componer registros
+...
+web_1 | django.core.exceptions.ImproperlyConfigured: Error loading psycopg2
+module: No module named 'psycopg2'
+</code></pre>
+<p>Habrá mucha salida pero en la parte inferior de la sección <code>web_1</code> se verán las líneas de arriba que indican que aún no se ha instalado el driver <code>psycopg2</code>.</p>
+<h2 id="195psycopg">19.5.Psycopg<a class="headerlink" href="#195psycopg" title="Permanent link">¶</a></h2>
+<p>PostgreSQL es una base de datos que puede ser utilizada por casi cualquier lenguaje de programación. Pero si se piensa, ¿cómo un lenguaje de programación, y todos ellos varían de alguna u otra menera, se conecta a la base de datos?
+¡La respuesta es a través de un adaptador de base de datos! Y eso es lo que es <a href="https://www.psycopg.org/">Psycopg</a>, el adaptador de base de datos más popular para Python. Si quieres saber más sobre el funcionamiento de Psycopg, aquí tienes un <a href="https://www.psycopg.org/docs/index.html">enlace a una descripción más completa en la página oficial</a>.
+Se puede instalar Pyscopg con Pipenv. En la línea de comandos, introducir el siguiente comando para que se instale en nuestro host Docker.</p>
+<pre><code class="language-bash">$ docker-compose exec web pipenv install psycopg2-binary==2.8.3
+</code></pre>
+<p>¿Por qué instalarse dentro de Docker en vez de localmente, nos preguntamos? La respuesta corta es que instalar consistentemente nuevos paquetes de software dentro de Docker y luego reconstruir la imagen desde cero nos salvará de potenciales conflictos de <code>Pipfile.lock</code>.
+La generación de <code>Pipfile.lock</code> depende en gran medida del sistema operativo que se utilice. Se ha especificado todo el sistema operativo en Docker, incluyendo el uso de Python 3.8. Pero si se instala <code>psycopg2</code> localmente en el ordenador, que tiene un entorno diferente, el archivo <code>Pipfile.lock</code> resultante también será diferente. Pero entonces el montaje de los volúmenes en el archivo <code>docker-compose.yml</code>, que sincroniza automáticamente los sistemas de archivos locales y Docker, hará que el <code>Pipfile.lock</code> local sobreescriba la versión dentro de Docker. Así que ahora nuestro contenedor Docker intenta ejecutar un archivo <code>Pipfile.lock</code> incorrecto. Una forma de evitar estos problemas es instalar sistemáticamente nuevos paquetes de software en Docker en lugar de hacerlo localmente.
+Si ahora  se actualiza la página web..... se seguirá viendo un error. Se revisan de nuevo los logs.</p>
+<pre><code class="language-bash">$ docker-compose logs
+</code></pre>
+<p>¡Es lo mismo que antes! ¿Por qué sucede esto? Docker almacena automáticamente las imágenes a menos que algo cambie por razones de rendimiento. Se quiere que reconstruya automáticamente la imagen con el nuevo <code>Pipfile</code> y <code>Pipfile.lock</code> pero porque la última línea del  <code>Dockerfile</code> es <code>COPY . /code/</code> sólo se copiarán los archivos; la imagen subyacente no se reconstruirá a sí misma a menos que la forcemos también. Esto puede hacerse añadiendo la bandera <code>--build</code>.</p>
+<blockquote>
+<p>Reconsiderar: siempre que se agregue un nuevo paquete primero instalarlo dentro de Docker, detener los contenedores, forzar una reconstrucción de la imagen, y luego iniciar los contenedores de nuevo.</p>
+</blockquote>
+<pre><code class="language-bash">$ docker-compose down
+$ docker-compose up -d --build
+</code></pre>
+<p>Si se actualiza la página principal de nuevo la página de bienvenida de Django en http://127.0.0.1:8000/ ¡ahora funciona! Eso es porque Django se ha conectado con éxito a PostgreSQL a través de Docker.</p>
+<h2 id="196-nueva-base-de-datos">19.6. Nueva base de datos<a class="headerlink" href="#196-nueva-base-de-datos" title="Permanent link">¶</a></h2>
+<p>Sin embargo, ya que se está usando PostgreSQL ahora, no SQLite, la base de datos está vacía. Si se miran los registros actuales de nuevo escribiendo <code>docker-compose logs</code> se verán quejas como <em>"Tienes 15 migraciones no aplicadas"</em>.
+Para reforzar este punto visitar <em>Admin</em> en http://127.0.0.1:8000/admin/ e iniciar sesión.
+¿Funcionará nuestra anterior cuenta de superusuario de sqliteadmin?
+¡No! Vemos <em>ProgrammingError at /admin</em> que se queja de que <code>auth_user</code> ni siquiera existe porque aún no se ha hecho la migración! Además, tampoco se tiene un superusuario en la base de datos PostgreSQL.
+Para arreglar esta situación se puede tanto migrar como crear un superusuario dentro de Docker que acceda a la base de datos PostgreSQL.</p>
+<pre><code class="language-bash">$ docker-compose exec web python manage.py migrate
+$ docker-compose exec web python manage.py createsuperuser
+</code></pre>
+<p>¿Cómo se debería llamar al superusuario? Usemos <code>postgresadmin</code> y para propósitos de prueba poner el correo electrónico a <code>postgresadmin@email.com</code> y la contraseña.
+En el navegador web navegar a la página de administración en http://127.0.0.1:8000/admin/  y entrar la información de acceso del nuevo superusuario.</p>
+<p>En la esquina superior derecha se muestra que estamos conectados con postgresadmin ahora no sqliteadmin. También puede hacer clic en la pestaña de Usuarios en la página de inicio y visitar la sección de Usuarios para ver nuestro único usuario es la nueva cuenta de superusuario.</p>
+<p>Recordar detener el contenedor en marcha con el <code>docker-compose down</code>.</p>
+<pre><code class="language-bash">$ docker-compose down
+</code></pre>
+<h2 id="197-git">19.7. Git<a class="headerlink" href="#197-git" title="Permanent link">¶</a></h2>
+<p>Guardar los cambios de nuevo inicializando Git para este nuevo proyecto, añadir los cambios, e incluir un mensaje de confirmación.</p>
+<pre><code class="language-bash">$ git init
+$ git status
+$ git add .
+$ git commit -m 'ch2'
+</code></pre>
+<h2 id="198-conclusion">19.8. Conclusión<a class="headerlink" href="#198-conclusion" title="Permanent link">¶</a></h2>
+<p>El objetivo de este capítulo era demostrar cómo Docker y PostgreSQL trabajan juntos en un proyecto de Django. Cambiar entre una base de datos SQLite y un PostgreSQL es un salto mental para muchos desarrolladores inicialmente.
+El punto clave es que con Docker ya no se necesita estar en un entorno virtual local. Docker es el nuevo entorno virtual... y la base de datos y más si se desea.
+El host de Docker esencialmente reemplaza al sistema operativo local y dentro de él se pueden ejecutar múltiples contenedores, como para la aplicación web y para la base de datos, que pueden ser aislados y ejecutados por separado.</p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.b78d2936.min.js"></script>
+<script src="../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
+</html>

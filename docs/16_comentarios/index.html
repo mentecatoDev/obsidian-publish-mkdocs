@@ -1,0 +1,686 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../15_permisos_y_autorizacion/" rel="prev"/>
+<link href="../17_docker/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.1" name="generator"/>
+<title>16. Comentarios - obsidian-mkdocs template</title>
+<link href="../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="pink" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#16-comentarios">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="obsidian-mkdocs template" class="md-header__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            obsidian-mkdocs template
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              16. Comentarios
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="pink" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="pink" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="obsidian-mkdocs template" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    obsidian-mkdocs template
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Obsidian Notes
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Features
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/LaTeX%20Math%20Support/">
+        LaTeX Math Support
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/Mermaid%20Diagrams/">
+        Mermaid diagrams
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/Text%20Formatting/">
+        Text Formatting
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Topic 1
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Topic 1
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Topic%201/Note%201/">
+        Note 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Topic%201/Note%202/">
+        Note 2
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Docs
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Docs
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+        Django
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../00_por_que_django/">
+        ¿Por qué Django?
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01_introduccion/">
+        1 Introducción
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02_configuracion_inicial/">
+        2 Configuración inicial
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03_hello_world_app/">
+        3. Hello World
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../04_pages_app/">
+        4 Pages app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../05_message_board_app/">
+        5. Message Board app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../06_blog_app/">
+        6. Blog app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../07_formularios/">
+        7. Formularios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../08_cuentas_de_usuarios/">
+        8. Cuentas de Usuarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../09_modelo_de_usuario_personalizado/">
+        9. Modelo de usuario personalizado
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10_autenticacion_de_usuarios/">
+        10. Autenticación de usuarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11_bootstrap/">
+        11. Bootstrap
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../12_cambio_y_restauracion_de_contrasenas/">
+        12. Cambio y Restauración de Contraseñas
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../13_email/">
+        13. Correo electrónico
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../14_newspaper_app/">
+        14. Newspaper app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../15_permisos_y_autorizacion/">
+        15. Permisos y Autorización
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          16. Comentarios
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        16. Comentarios
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#161-modelo">
+    16.1. Modelo
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#164-admin">
+    16.4 Admin
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#165-plantilla">
+    16.5. Plantilla
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conclusion">
+    Conclusión
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../17_docker/">
+        17. Docker
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../18_postgresql/">
+        18. PostgreSQL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../19_/">
+        19. Proyecto Bookstore
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../20_/">
+        Chapter 4: Pages App
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../21/">
+        21
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../22/">
+        22
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../23/">
+        23
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../24/">
+        24
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../25/">
+        25
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../26/">
+        26
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../27/">
+        27
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../30/">
+        30
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../31/">
+        31
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../32/">
+        32
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../33/">
+        33
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../34/">
+        34
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../35/">
+        35
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../36/">
+        36
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../conclusion/">
+        Conclusión
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../correo_en_django/">
+        Documentación Django
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../la_api_de_sendgrid/">
+        La API de SendGrid
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#161-modelo">
+    16.1. Modelo
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#164-admin">
+    16.4 Admin
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#165-plantilla">
+    16.5. Plantilla
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conclusion">
+    Conclusión
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="16-comentarios">16. Comentarios<a class="headerlink" href="#16-comentarios" title="Permanent link">¶</a></h1>
+<ul>
+<li>Dos maneras:</li>
+<li>Crear una aplicación de comentarios dedicada y enlazarla a los artículos (sobreingeniería en este momento).</li>
+<li>Añadir un modelo adicional llamado <code>Comment</code> a la aplicación de artículos y enlazarlo al modelo de <code>Article</code> a través de una clave foránea.</li>
+<li>Los usuarios también tendrán la posibilidad de dejar comentarios en los artículos de cualquier otro usuario.</li>
+</ul>
+<h2 id="161-modelo">16.1. Modelo<a class="headerlink" href="#161-modelo" title="Permanent link">¶</a></h2>
+<ul>
+<li>Añadir otra tabla a nuestra base de datos existente llamada <code>Comment</code>.<ul>
+<li>Tendrá una relación de muchos a uno con clave primaria  <code>Article</code>: un artículo puede tener muchos comentarios, pero no al revés. Tradicionalmente el nombre del campo de la clave foránea es simplemente el modelo con el que se vincula, por lo que este campo se llamará <code>article</code>. Los otros dos campos serán <code>comment</code> y <code>author</code>.</li>
+</ul>
+</li>
+</ul>
+<p>FICHERO: <code>articles/models.py</code></p>
+<pre><code class="language-python">`...`
+
+class Comment(models.Model):
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, verbose_name='Artículo')
+    comment = models.CharField(max_length=140, verbose_name='Comentario')
+    author = models.ForeignKey(
+        get_user_model(),         # ó settings.AUTH_USER_MODEL
+        on_delete=models.CASCADE,
+        verbose_name='Autor'
+    )
+
+    def __str__(self):
+        return self.comment
+
+    def get_absolute_url(self):
+        return reverse('article_list', args=[str(self.id)])
+
+</code></pre>
+<ul>
+<li>El modelo <code>Comment</code> tiene un método <code>__str__</code> y un método <code>get_absolute_url</code> que regresa a la página principal <code>articles/</code>.</li>
+<li>Ya que se han actualizado los modelos, es hora de hacer un nuevo archivo de migración y luego aplicarlo.<ul>
+<li>Al añadir <code>articles</code> al final de cada comando, lo cual es opcional, estamos especificando que queremos usar sólo la aplicación de artículos. Esto es un buen hábito.</li>
+<li>Por ejemplo, ¿qué pasaría si se hicieran cambios en los modelos de dos aplicaciones diferentes? Si no especificamos una aplicación, entonces los cambios de ambas aplicaciones se incorporarán en el mismo archivo de migraciones, lo que hace más difícil, en el futuro, depurar los errores. Manténgase cada migración tan pequeña y contenida como sea posible.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-bash">(news) $ python manage.py makemigrations articles
+(news) $ python manage.py migrate
+</code></pre>
+<h2 id="164-admin">16.4 Admin<a class="headerlink" href="#164-admin" title="Permanent link">¶</a></h2>
+<ul>
+<li>Después de crear un nuevo modelo es bueno jugar con él en la aplicación de administración antes de mostrarlo en el sitio web real. Añadir el <code>Comment</code> al archivo <code>admin.py</code> para que sea visible.</li>
+</ul>
+<p>FICHERO: <code>articles/admin.py</code></p>
+<pre><code class="language-python"># articles/admin.py
+from django.contrib import admin
+from .models import Article, Comment # new
+
+admin.site.register(Article)
+admin.site.register(Comment) # new
+</code></pre>
+<ul>
+<li>En este punto podríamos añadir un campo de administración adicional para ver el comentario y el artículo en la página de administración de Django. ¿Pero no sería mejor ver todos los modelos de <code>Comment</code> relacionados con un solo modelo <code>Post</code>? Resulta que sí, con una función de administración de Django llamada <strong>inlines</strong> que muestra las relaciones de claves externas de una manera más visual y agradable.</li>
+<li>Hay dos vistas <strong>inlines</strong> principales: <code>TabularInline</code> y <code>StackedInline</code>. La única diferencia entre las dos es el modelo para mostrar la información. En una <code>TabularInline</code> todos los campos del modelo aparecen en una línea mientras que en una <code>StackedInline</code> cada campo tiene su propia línea.</li>
+<li>Se implementarán las dos para decidir cuál se prefiere</li>
+</ul>
+<p>FICHERO: <code>articles/admin.py</code></p>
+<pre><code class="language-python">from django.contrib import admin
+from .models import Article, Comment
+
+
+class CommentInline(admin.StackedInline):  # new
+    model = Comment
+
+
+class ArticleAdmin(admin.ModelAdmin):      # new
+    inlines = [
+        CommentInline,
+    ]
+
+
+admin.site.register(Article, ArticleAdmin) # new
+admin.site.register(Comment)
+</code></pre>
+<ul>
+<li>
+<p>Se pueden ver y modificar todos los artículos y comentarios relacionados en un solo lugar.</p>
+</li>
+<li>
+<p>Note that by default, the Django admin will display 3 empty rows here. You can change the default   number that appear with the extra field. So if you wanted no fields by default, the code would  look like this:</p>
+</li>
+<li>
+<p>FICHERO: <code>articles/admin.py</code></p>
+</li>
+</ul>
+<pre><code class="language-python">class CommentInline(admin.StackedInline):
+   model = Comment
+   extra = 0 # new
+</code></pre>
+<ul>
+<li>En caso de usar  <code>TabularInline</code> se muestra más información en menos espacio, lo cual es preferible. Para cambiar a él sólo hay que cambiar <code>CommentInline</code> de <code>admin.StackedInline</code> a <code>admin.TabularInline</code>.</li>
+</ul>
+<p>FICHERO: <code>articles/admin.py</code></p>
+<pre><code class="language-python">from django.contrib import admin
+from .models import Article, Comment
+
+class CommentInline(admin.TabularInline): # new
+    model = Comment
+
+class ArticleAdmin(admin.ModelAdmin):
+    inlines = [
+        CommentInline,
+    ]
+
+admin.site.register(Article, ArticleAdmin)
+admin.site.register(Comment)
+</code></pre>
+<ul>
+<li>Ver los cambios en la página de administración de Django: todos los campos de cada modelo se muestran en la misma línea.</li>
+</ul>
+<h2 id="165-plantilla">16.5. Plantilla<a class="headerlink" href="#165-plantilla" title="Permanent link">¶</a></h2>
+<ul>
+<li>Dado que <code>Comment</code> vive dentro de la app <code>articles</code> existente, sólo necesitamos actualizar las plantillas existentes para <code>article_list.html</code> y <code>article_detail.html</code> para mostrar el nuevo contenido. No hay que crear nuevas plantillas y jugar con las urls y las vistas.</li>
+<li>Lo que se quiere hacer es mostrar <strong>todos</strong> los comentarios relacionados con un artículo específico. Esto se llama "query" ya que estamos pidiendo a la base de datos una información específica. En este caso, al trabajar con una clave foránea, se busca seguir una relación hacia atrás: para cada <code>Article</code> buscar modelos de <code>Comment</code> relacionados.</li>
+<li>Django tiene una sintaxis incorporada que se puede usar conocida como <code>FOO_set</code> donde <code>FOO</code> es el nombre del modelo fuente en minúsculas. Así que para el modelo de <code>Article</code> se puede usar <code>article_set</code> para acceder a todas las instancias del modelo.</li>
+<li>Esta sintaxis es un poco confusa y no intuitiva. Un mejor enfoque es añadir un atributo <code>related_name</code> al modelo que permita establecer explícitamente el nombre de esta relación inversa en su lugar. Hagámoslo.</li>
+<li>Para empezar, agregar un atributo <code>related_name</code> al modelo de comentarios. Un buen valor por defecto es nombrarlo en el plural del modelo que contiene la clave foránea.</li>
+</ul>
+<p>FICHERO: <code>articles/models.py</code></p>
+<pre><code class="language-python">`...`
+class Comment(models.Model):
+    article = models.ForeignKey(
+        Article,
+        on_delete=models.CASCADE,
+        related_name='comments', # new
+        verbose_name='Artículo'
+    )
+    comment = models.CharField(max_length=140,  verbose_name='Comentario')
+    author = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE,
+        verbose_name='Autor'
+    )
+
+    def __str__(self):
+        return self.comment
+
+    def get_absolute_url(self):
+        return reverse('article_list')
+</code></pre>
+<ul>
+<li>Como se acaba de hacer un cambio en el modelo de base de datos, se necesita crear un archivo de migraciones y actualizar la base de datos.</li>
+</ul>
+<pre><code class="language-bash">(news) $ python manage.py makemigrations articles
+(news) $ python manage.py migrate
+(news) $ python manage.py runserver
+</code></pre>
+<ul>
+<li>Entender las consultas lleva algún tiempo, así que no preocuparse si la idea de las relaciones inversas es confusa. Y una vez que se dominen estos casos básicos, se puede explorar cómo filtrar  consultas con gran detalle para que devuelvan exactamente la información que se desea.</li>
+<li>En el archivo <code>article_list.html</code> se pueden añadir los comentarios a <code>card-footer</code>. Notar que se han movido los enlaces de edición y borrado a <code>card-body</code>. Para acceder a cada comentario se llama a <code>article.comments.all</code> lo que significa que primero se mira el modelo <code>article</code>, luego <code>comment</code> que es el nombre relacionado a todo el modelo <code>Comment</code>, y se selecciona <code>all included</code>. ¡Puede llevar un poco de tiempo acostumbrarse a esta sintaxis para referenciar datos de claves foráneas en una plantilla!</li>
+</ul>
+<p>FICHERO: <code>template/article_list.html</code></p>
+<pre><code class="language-html">{% extends 'base.html' %}
+
+{% block title %}Articles{% endblock title %}
+
+{% block content %}
+  {% for article in object_list %}
+    &lt;div class="card"&gt;
+      &lt;div class="card-header"&gt;
+        &lt;span class="font-weight-bold"&gt;{{ article.title }}&lt;/span&gt; &amp;middot;
+        &lt;span class="text-muted"&gt;por {{ article.author }} | {{ article.date }}&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="card-body"&gt;
+        &lt;!-- Los cambios empiezan aquí --&gt;
+        &lt;p&gt;{{ article.body }}&lt;/p&gt;
+        &lt;a href="{% url 'article_edit' article.pk %}"&gt;Editar&lt;/a&gt; |
+        &lt;a href="{% url 'article_delete' article.pk %}"&gt;Borrar&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class="card-footer"&gt;
+        {% for comment in article.comments.all %}
+          &lt;p&gt;
+            &lt;span class="font-weight-bold"&gt;
+              {{ comment.author }} &amp;middot;
+            &lt;/span&gt;
+            {{ comment }}
+          &lt;/p&gt;
+        {% endfor %}
+      &lt;/div&gt;
+      &lt;!-- Los cambios terminan aquí --&gt;
+    &lt;/div&gt;
+    &lt;br&gt;
+  {% endfor %}
+{% endblock content %}
+</code></pre>
+<h2 id="conclusion">Conclusión<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
+<ul>
+<li>Con más tiempo habría que centrarse en los formularios para que un usuario pueda escribir un nuevo artículo directamente en la página de artículos, así como añadir también comentarios. Pero el principal objetivo de este capítulo es demostrar cómo funcionan las relaciones de clave foránea en Django.</li>
+<li>La aplicación para el periódico ya está completa.<ul>
+<li>Tiene un flujo de autenticación de usuario robusto, incluyendo el uso del correo electrónico para el restablecimiento de la contraseña.</li>
+<li>También se utiliza un modelo de usuario personalizado, por lo que si se quiere añadir campos adicionales al modelo de usuario personalizado es tan sencillo como añadir un campo adicional. Ya tenemos un campo de edad para todos los usuarios que está siendo configurado por defecto. </li>
+<li>Se podría añadir un desplegable de edad al formulario de registro y restringir el acceso de los usuarios sólo a los mayores de 13 años. O se podría ofrecer descuentos a los usuarios mayores de 65 años. Lo que se quiera hacer con el modelo de usuario personalizado es una opción.</li>
+</ul>
+</li>
+<li>La mayor parte del desarrollo web sigue los mismos patrones y al utilizar un framework como Django el 99% de lo que se quiera en términos de funcionalidad ya está incluido o sólo falta una pequeña personalización de alguna función existente.</li>
+</ul>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.b78d2936.min.js"></script>
+<script src="../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
+</html>

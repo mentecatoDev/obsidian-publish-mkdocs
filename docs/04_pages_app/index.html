@@ -1,0 +1,1061 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../03_hello_world_app/" rel="prev"/>
+<link href="../05_message_board_app/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.1" name="generator"/>
+<title>4 Pages app - obsidian-mkdocs template</title>
+<link href="../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="pink" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#4-pages-app">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="obsidian-mkdocs template" class="md-header__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            obsidian-mkdocs template
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              4 Pages app
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="pink" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="pink" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="obsidian-mkdocs template" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    obsidian-mkdocs template
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Obsidian Notes
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Features
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/LaTeX%20Math%20Support/">
+        LaTeX Math Support
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/Mermaid%20Diagrams/">
+        Mermaid diagrams
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/Text%20Formatting/">
+        Text Formatting
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Topic 1
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Topic 1
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Topic%201/Note%201/">
+        Note 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Topic%201/Note%202/">
+        Note 2
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Docs
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Docs
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+        Django
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../00_por_que_django/">
+        ¿Por qué Django?
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01_introduccion/">
+        1 Introducción
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02_configuracion_inicial/">
+        2 Configuración inicial
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03_hello_world_app/">
+        3. Hello World
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          4 Pages app
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        4 Pages app
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-objetivos">
+    4.1 Objetivos
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42-configuracion-inicial">
+    4.2 Configuración inicial
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#43-plantillas-templates">
+    4.3 Plantillas (Templates)
+  </a>
+<nav aria-label="4.3 Plantillas (Templates)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#431-donde-colocar-el-directorio-de-plantillas">
+    4.3.1 Dónde colocar el directorio de plantillas
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#44-vistas-basadas-en-clases-class-based-views">
+    4.4 Vistas basadas en clases (Class-Based Views)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#45-urls">
+    4.5 URLs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#46-anadir-una-pagina-acerca-de">
+    4.6 Añadir una página "Acerca de..."
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#47-extendiendo-plantillas">
+    4.7 Extendiendo Plantillas
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#48-tests">
+    4.8 Tests
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#49-git-github-gitlab-y-bitbucket">
+    4.9 Git, GitHub, GitLab y Bitbucket
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#410-local-vs-produccion">
+    4.10 Local vs Producción
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#411-heroku">
+    4.11 Heroku
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#411-ficheros-adicionales">
+    4.11 Ficheros adicionales
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#412-despliegue">
+    4.12 Despliegue
+  </a>
+<nav aria-label="4.12 Despliegue" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#crear-una-nueva-aplicacion-de-heroku-desde-la-linea-de-comandos-con-heroku-create">
+    Crear una nueva aplicación de Heroku, desde la línea de comandos con heroku create
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#anadir-un-hook-para-heroku-dentro-de-git">
+    Añadir un “hook” para Heroku dentro de git
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configurar-la-aplicacion-para-ignorar-los-archivos-estaticos">
+    Configurar la aplicación para ignorar los archivos estáticos
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#iniciar-el-servidor-de-heroku-para-que-la-aplicacion-este-activa">
+    Iniciar el servidor de Heroku para que la aplicación esté activa
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#visitar-la-aplicacion-en-la-url-proporcionada-por-heroku">
+    Visitar la aplicación en la URL proporcionada por Heroku
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#413-errores-404">
+    4.13 Errores 404
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../05_message_board_app/">
+        5. Message Board app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../06_blog_app/">
+        6. Blog app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../07_formularios/">
+        7. Formularios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../08_cuentas_de_usuarios/">
+        8. Cuentas de Usuarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../09_modelo_de_usuario_personalizado/">
+        9. Modelo de usuario personalizado
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10_autenticacion_de_usuarios/">
+        10. Autenticación de usuarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11_bootstrap/">
+        11. Bootstrap
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../12_cambio_y_restauracion_de_contrasenas/">
+        12. Cambio y Restauración de Contraseñas
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../13_email/">
+        13. Correo electrónico
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../14_newspaper_app/">
+        14. Newspaper app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../15_permisos_y_autorizacion/">
+        15. Permisos y Autorización
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../16_comentarios/">
+        16. Comentarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../17_docker/">
+        17. Docker
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../18_postgresql/">
+        18. PostgreSQL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../19_/">
+        19. Proyecto Bookstore
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../20_/">
+        Chapter 4: Pages App
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../21/">
+        21
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../22/">
+        22
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../23/">
+        23
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../24/">
+        24
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../25/">
+        25
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../26/">
+        26
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../27/">
+        27
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../30/">
+        30
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../31/">
+        31
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../32/">
+        32
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../33/">
+        33
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../34/">
+        34
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../35/">
+        35
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../36/">
+        36
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../conclusion/">
+        Conclusión
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../correo_en_django/">
+        Documentación Django
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../la_api_de_sendgrid/">
+        La API de SendGrid
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-objetivos">
+    4.1 Objetivos
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42-configuracion-inicial">
+    4.2 Configuración inicial
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#43-plantillas-templates">
+    4.3 Plantillas (Templates)
+  </a>
+<nav aria-label="4.3 Plantillas (Templates)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#431-donde-colocar-el-directorio-de-plantillas">
+    4.3.1 Dónde colocar el directorio de plantillas
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#44-vistas-basadas-en-clases-class-based-views">
+    4.4 Vistas basadas en clases (Class-Based Views)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#45-urls">
+    4.5 URLs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#46-anadir-una-pagina-acerca-de">
+    4.6 Añadir una página "Acerca de..."
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#47-extendiendo-plantillas">
+    4.7 Extendiendo Plantillas
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#48-tests">
+    4.8 Tests
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#49-git-github-gitlab-y-bitbucket">
+    4.9 Git, GitHub, GitLab y Bitbucket
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#410-local-vs-produccion">
+    4.10 Local vs Producción
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#411-heroku">
+    4.11 Heroku
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#411-ficheros-adicionales">
+    4.11 Ficheros adicionales
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#412-despliegue">
+    4.12 Despliegue
+  </a>
+<nav aria-label="4.12 Despliegue" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#crear-una-nueva-aplicacion-de-heroku-desde-la-linea-de-comandos-con-heroku-create">
+    Crear una nueva aplicación de Heroku, desde la línea de comandos con heroku create
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#anadir-un-hook-para-heroku-dentro-de-git">
+    Añadir un “hook” para Heroku dentro de git
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configurar-la-aplicacion-para-ignorar-los-archivos-estaticos">
+    Configurar la aplicación para ignorar los archivos estáticos
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#iniciar-el-servidor-de-heroku-para-que-la-aplicacion-este-activa">
+    Iniciar el servidor de Heroku para que la aplicación esté activa
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#visitar-la-aplicacion-en-la-url-proporcionada-por-heroku">
+    Visitar la aplicación en la URL proporcionada por Heroku
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#413-errores-404">
+    4.13 Errores 404
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="4-pages-app">4 Pages app<a class="headerlink" href="#4-pages-app" title="Permanent link">¶</a></h1>
+<h2 id="41-objetivos">4.1 Objetivos<a class="headerlink" href="#41-objetivos" title="Permanent link">¶</a></h2>
+<ul>
+<li>Desplegar la app <em>Pages</em> con una página <em>homepage</em> y una <em>about</em></li>
+<li>Vistas basadas en clases y plantillas (templates)</li>
+</ul>
+<h2 id="42-configuracion-inicial">4.2 Configuración inicial<a class="headerlink" href="#42-configuracion-inicial" title="Permanent link">¶</a></h2>
+<ul>
+<li>Crear un nuevo directorio para el código</li>
+<li>Instalar Django en un nuevo entorno virtual</li>
+<li>Crear un nuevo projecto Django</li>
+<li>Crear una nueva app <code>pages</code></li>
+<li>Actualizar <code>settings.py</code></li>
+</ul>
+<pre><code class="language-bash">$ cd ~/Desktop
+$ mkdir pages
+$ cd pages
+$ poetry init -n
+$ poetry shell
+(pages) $ poetry add django
+(pages) $ django-admin startproject pages_project .
+(pages) $ python manage.py startapp pages   # ó (pages) $ django-admin startapp pages
+</code></pre>
+<p>FICHERO: <code>pages_project/settings.py</code> </p>
+<pre><code class="language-python">...
+    INSTALLED_APPS = [
+        'pages.apps.PagesConfig', # new
+...
+</code></pre>
+<ul>
+<li>Arrancar servidor</li>
+</ul>
+<pre><code class="language-bash">(pages) $ python manage.py runserver
+</code></pre>
+<h2 id="43-plantillas-templates">4.3 Plantillas (Templates)<a class="headerlink" href="#43-plantillas-templates" title="Permanent link">¶</a></h2>
+<ul>
+<li>Cada framework precisa generar de alguna manera ficheros HTML. En Django, la aproximación es usar plantillas (templates) de tal forma que los archivos HTML individuales puedan ser servidos por una vista a la  página web especificada por la ruta (URL).  </li>
+</ul>
+<p><center>Plantilla –&gt; Vista –&gt; Ruta</center></p>
+<ul>
+<li><strong>Ruta</strong> (URL).- Controla la ruta inicial</li>
+<li><strong>Vista</strong> (View).- Contiene la lógica (el qué). En páginas relacionadas con BD es lo que hace la mayor parte del trabajo en cuanto a decidir qué datos estarán disponibles para la plantilla.</li>
+<li><strong>Plantilla</strong> (Template).- Contiene el HTML.</li>
+</ul>
+<h3 id="431-donde-colocar-el-directorio-de-plantillas">4.3.1 Dónde colocar el directorio de plantillas<a class="headerlink" href="#431-donde-colocar-el-directorio-de-plantillas" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Por defecto</strong>, Django mira dentro de cada <strong>app</strong> en busca de plantillas.</li>
+<li>En la app <code>pages</code> se creará una estructura de directorios como la siguiente con la plantilla <code>home.html</code> colgando de ella:  </li>
+</ul>
+<pre><code class="language-text">    └── pages
+        ├── templates
+            ├── pages
+                ├── home.html      
+</code></pre>
+<ul>
+<li><strong>La otra aproximación</strong> es hacer un directorio de plantillas común a todas las apps. </li>
+<li>Hay que cambiar <code>settings.py</code> para que busque, también en este directorio, las plantillas que se necesiten.</li>
+</ul>
+<pre><code class="language-bash">   (pages) $ mkdir templates
+   (pages) $ touch templates/home.html
+</code></pre>
+<p>FICHERO: <code>pages_project/settings.py</code> </p>
+<pre><code class="language-python">TEMPLATES = [
+    {
+        ...
+         'DIRS': [BASE_DIR / 'templates'],
+        ...
+    },
+]
+</code></pre>
+<blockquote>
+<p>La librería pathlib añade una funcionalidad adicional al símbolo "/" con lo que podremos crear una ruta de forma más simple al tradicional  'DIRS': [str(BASE_DIR.joinpath('templates'))],</p>
+</blockquote>
+<p>FICHERO: <code>templates/home.html</code> </p>
+<pre><code class="language-html">   &lt;h1&gt;Homepage&lt;/h1&gt;
+</code></pre>
+<ul>
+<li>Ahora es el turno de la <strong>ruta</strong> y la <strong>vista</strong></li>
+</ul>
+<h2 id="44-vistas-basadas-en-clases-class-based-views">4.4 Vistas basadas en clases (Class-Based Views)<a class="headerlink" href="#44-vistas-basadas-en-clases-class-based-views" title="Permanent link">¶</a></h2>
+<ul>
+<li>Las primeras versiones de Django solo incluían vistas basadas en <strong>funciones</strong>, pero los desarrolladores pronto se encontraron repitiendo los mismos patrones una y otra vez.</li>
+<li>Sin embargo, no había una manera fácil de ampliar o personalizar estas vistas.</li>
+<li>Django introdujo vistas genéricas basadas en clases que facilitan el uso y también amplían las vistas que cubren casos de uso comunes.</li>
+<li>En el ejemplo se usará la clase <code>TemplateView</code> incorporada para mostrar la plantilla.  </li>
+</ul>
+<p>FICHERO: <code>pages/views.py</code> </p>
+<pre><code class="language-python">from django.views.generic import TemplateView
+
+
+class HomePageView(TemplateView):
+    template_name = 'home.html'
+</code></pre>
+<ul>
+<li>Distíngase cómo se ha puesto en mayúsculas la vista, porque ahora es una clase, y cómo ésta es descendiente de la clase base <code>TemplateView</code>.</li>
+</ul>
+<h2 id="45-urls">4.5 URLs<a class="headerlink" href="#45-urls" title="Permanent link">¶</a></h2>
+<ul>
+<li>El último paso es actualizar las <code>URLConfs</code>.</li>
+</ul>
+<p>FICHERO: <code>pages/urls.py</code> </p>
+<pre><code class="language-python">from django.urls import path
+from .views import HomePageView
+
+urlpatterns = [
+    path('', HomePageView.as_view(), name='home'),
+]
+</code></pre>
+<p>FICHERO: <code>pages_project/urls.py</code> </p>
+<pre><code class="language-python">from django.contrib import admin
+from django.urls import path, include # new
+
+urlpatterns = [
+
+    path('admin/', admin.site.urls),
+    path('', include('pages.urls')), # new
+]
+</code></pre>
+<ul>
+<li>Este patrón es casi idéntico al que se hizo anteriormente, con una sola diferencia; cuando se usan vistas basadas en clases, siempre se añade <code>as_view()</code> al final de su nombre.</li>
+<li>Iniciar el servidor para ver la nueva página de inicio.</li>
+</ul>
+<h2 id="46-anadir-una-pagina-acerca-de">4.6 Añadir una página "Acerca de..."<a class="headerlink" href="#46-anadir-una-pagina-acerca-de" title="Permanent link">¶</a></h2>
+<ul>
+<li>Crear un nuevo fichero de plantilla</li>
+</ul>
+<pre><code class="language-bash">(pages) $ touch templates/about.html
+</code></pre>
+<p>FICHERO: <code>templates/about.html</code> </p>
+<pre><code class="language-html">&lt;h1&gt;Acerca de...&lt;/h1&gt;
+</code></pre>
+<ul>
+<li>Crear una nueva vista para la página</li>
+</ul>
+<p>FICHERO: <code>pages/views.py</code> </p>
+<pre><code class="language-python">from django.views.generic import TemplateView
+
+
+class HomePageView(TemplateView):
+    template_name = 'home.html'
+
+
+class AboutPageView(TemplateView):
+    template_name = 'about.html'
+</code></pre>
+<ul>
+<li>Conectar la vista con la ruta</li>
+</ul>
+<p>FICHERO: <code>pages/urls.py</code> </p>
+<pre><code class="language-python">    from django.urls import path
+    from .views import HomePageView, AboutPageView # new
+
+    urlpatterns = [
+        path('about/', AboutPageView.as_view(), name='about'), # new
+        path('', HomePageView.as_view(), name='home'),
+    ]
+</code></pre>
+<ul>
+<li>Lanzar <code>http://localhost:8000/about</code></li>
+</ul>
+<h2 id="47-extendiendo-plantillas">4.7 Extendiendo Plantillas<a class="headerlink" href="#47-extendiendo-plantillas" title="Permanent link">¶</a></h2>
+<ul>
+<li>El poder real de las plantillas es la posibilidad de ser extendidas.</li>
+<li>En las mayoría de webs encontramos contenido que se repite en cada página:</li>
+<li>Hagamos una página canónica que será heredada por las demás</li>
+<li>Django tiene un <a href="https://docs.djangoproject.com/es/3.0/ref/templates/builtins/">lenguaje mínimo de plantillas</a> para añadirles enlaces y lógica básica</li>
+<li>Los tags de las plantillas tienen la forma</li>
+</ul>
+<div align="center">
+<pre>
+        {% cualquier_cosa %}
+    </pre>
+</div>
+<ul>
+<li>
+<p>Para añadir <strong>enlaces</strong> a nuestro proyecto podemos usar la etiqueta de plantilla <code>url</code> incorporada que toma un patrón de URL como argumento.</p>
+</li>
+<li>
+<p>El tag  <code>url</code> utiliza los nombres opcionales de URL para crear enlaces automáticos por nosotros.</p>
+</li>
+<li>
+<p>Por ejemplo: <code>{% url 'home' %}</code></p>
+</li>
+</ul>
+<p>FICHERO: <code>templates/base.html</code></p>
+<pre><code class="language-html">&lt;header&gt;
+  &lt;a href="{% url 'home' %}"&gt;Home&lt;/a&gt; | 
+  &lt;a href="{% url 'about' %}"&gt;About&lt;/a&gt;
+&lt;/header&gt;
+
+{% block content %}
+{% endblock content %}
+</code></pre>
+<ul>
+<li>
+<p>Al final se añade un tag <code>block</code> llamado <code>content</code>. Los bloques pueden ser reescritos por las vistas descencientes.</p>
+</li>
+<li>
+<p>El lenguaje de plantillas de Django dispone de un método <code>extends</code> que puede usarse para actualizar <code>home.html</code> y <code>about.html</code> y así extender la plantilla <code>base.html</code>.</p>
+</li>
+</ul>
+<p>FICHERO: <code>templates/home.html</code> </p>
+<pre><code class="language-html">{% extends 'base.html' %}
+
+{% block content %}
+    &lt;h1&gt;Homepage&lt;/h1&gt;
+{% endblock content %}
+</code></pre>
+<p>FICHERO: <code>templates/about.html</code></p>
+<pre><code class="language-html">{% extends 'base.html' %}
+
+{% block content %}
+    &lt;h1&gt;About page&lt;/h1&gt;
+{% endblock content %}
+</code></pre>
+<h2 id="48-tests">4.8 Tests<a class="headerlink" href="#48-tests" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p>Importancia de los tests </p>
+</li>
+<li>
+<p><em>Jaco Kaplan-Moss</em>: "Code without tests is broken as designed." (El código sin pruebas se rompe según se diseñó)</p>
+</li>
+<li>
+<p>Django nos brinda herramientas para escribir y correr tests.</p>
+</li>
+</ul>
+<p>FICHERO: <code>pages/tests.py</code></p>
+<pre><code class="language-python"># pages/tests.py
+from django.test import SimpleTestCase
+
+class SimpleTests(SimpleTestCase):
+    def test_home_page_status_code(self):
+        response = self.client.get('/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_about_page_status_code(self):
+        response = self.client.get('/about/')
+        self.assertEqual(response.status_code, 200)
+</code></pre>
+<ul>
+<li>Se usa <code>SimpleTestCase</code> ya que no estamos usando una base de datos. Si estuviéramos usando una base de datos, en su lugar usaríamos <code>TestCase</code>. </li>
+<li>Luego se realiza una comprobación de si el código de estado para cada página es 200, que es la respuesta estándar para una solicitud HTTP exitosa.</li>
+<li>Esa es una manera elegante de garantizar que una página web determinada realmente existe, pero no dice nada sobre su contenido.</li>
+<li>Para ejecutar los tests:</li>
+</ul>
+<pre><code class="language-bash">(pages) $ python manage.py test
+System check identified no issues (0 silenced).
+..
+---------------------------------------------------------------
+Ran 2 tests in 0.014s
+
+OK
+</code></pre>
+<h2 id="49-git-github-gitlab-y-bitbucket">4.9 Git, GitHub, GitLab y Bitbucket<a class="headerlink" href="#49-git-github-gitlab-y-bitbucket" title="Permanent link">¶</a></h2>
+<pre><code class="language-bash">(pages) $ git init
+(pages) $ git status
+(pages) $ git add -A
+(pages) $ git commit -m 'Commit inicial'
+</code></pre>
+<h2 id="410-local-vs-produccion">4.10 Local vs Producción<a class="headerlink" href="#410-local-vs-produccion" title="Permanent link">¶</a></h2>
+<ul>
+<li>Código en producción</li>
+<li>Código implementado en un servidor externo para que cualquiera pueda ver el sitio web.</li>
+<li>Hay muchos proveedores de servidores disponibles, pero usaremos <em>Heroku</em> porque es gratis para pequeños proyectos, ampliamente utilizado y tiene un proceso de implementación relativamente sencillo.</li>
+</ul>
+<h2 id="411-heroku">4.11 Heroku<a class="headerlink" href="#411-heroku" title="Permanent link">¶</a></h2>
+<ul>
+<li>Se puede obtener una cuenta gratuita de Heroku en <a href="https://www.heroku.com/">su sitio web</a>.</li>
+<li>Ahora se necesita instalar la interfaz de línea de comando (CLI) de Heroku para poder implementar desde la línea de comando.</li>
+<li>Queremos instalar Heroku globalmente para que esté disponible en toda nuestra computadora.</li>
+<li>Si se instala Heroku dentro de un entorno virtual, solo estará disponible allí.</li>
+<li><a href="https://devcenter.heroku.com/articles/heroku-cli">Instalar Heroku según el sitio web de Heroku</a></li>
+<li><a href="https://devcenter.heroku.com/articles/heroku-cli#arch-linux">Arch Linux</a><ul>
+<li><a href="https://aur.archlinux.org/packages/heroku-cli">Este paquete</a> está mantenido por la comunidad y no por Heroku.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-bash">$ yay -S heroku-cli
+</code></pre>
+<pre><code class="language-bash">(pages) $ heroku login
+Enter your Heroku credentials:
+Email: will@wsvincent.com
+Password: *********************************
+Logged in as will@wsvincent.com
+</code></pre>
+<h2 id="411-ficheros-adicionales">4.11 Ficheros adicionales<a class="headerlink" href="#411-ficheros-adicionales" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p>Se necesitan hacer cuatro cambios al proyecto para desplegar en Heroku:</p>
+</li>
+<li>
+<p>actualizar el archivo <code>Pipfile.lock</code></p>
+</li>
+<li>hacer un nuevo archivo <code>Procfile</code></li>
+<li>instalar <code>gunicorn</code> como servidor web</li>
+<li>
+<p>hacer un cambio de una línea al archivo <code>settings.py</code></p>
+</li>
+<li>
+<p>Especificar la versión de Python que se está usando en <code>Pipfile</code></p>
+</li>
+</ul>
+<pre><code class="language-toml"># Pipfile
+[requires]
+python_version = "3.9"
+</code></pre>
+<p>Luego ejecutar <code>pipenv lock</code> para generar el archivo <code>Pipfile.lock</code> apropiado.</p>
+<pre><code class="language-bash">(pages) $ pipenv lock
+</code></pre>
+<ul>
+<li>Heroku busca en <code>Pipfile.lock</code> información sobre el entorno virtual.</li>
+<li>A continuación crear un <code>Procfile</code> que es específico para Heroku.</li>
+</ul>
+<p>FICHERO: <code>Procfile</code></p>
+<pre><code class="language-text">web: gunicorn pages_project.wsgi --log-file -
+</code></pre>
+<ul>
+<li>Esto indica que se use el fichero <code>pages_project.wsgi</code> existente pero con <code>gunicorn</code>, que es un <em>servidor web adecuado para la producción</em>, en lugar del propio servidor de Django; que por otro lado aún tenemos que instalar.</li>
+</ul>
+<pre><code class="language-bash">(pages) $ pipenv install gunicorn
+</code></pre>
+<p>El último paso es un cambio de una línea a <code>settings.py</code>.</p>
+<p>FICHERO: <code>pages_project/settings.py</code> </p>
+<pre><code class="language-python"># pages_project/settings.py
+ALLOWED_HOSTS = ['*']
+</code></pre>
+<ul>
+<li>
+<p>El parámetro <code>ALLOWEDHOSTS</code> representa los nombres de host/dominio que nuestro sitio Django puede servir. Esta es una medida de seguridad para evitar los ataques de cabecera de host HTTP, que son posibles incluso bajo muchas configuraciones de servidores web aparentemente seguras.</p>
+</li>
+<li>
+<p>Sin embargo, se ha utilizado el comodín asterisco <code>*</code>, que significa que todos los dominios son aceptables para mantener las cosas simples.</p>
+</li>
+<li>
+<p>En un sitio Django de nivel de producción, se enumeran explícitamente los dominios que están permitidos.</p>
+</li>
+<li>
+<p>Usar <code>git status</code> para comprobar nuestros cambios, añadir los nuevos archivos, y luego confirmarlos:</p>
+</li>
+</ul>
+<pre><code class="language-bash">(pages) $ git status
+(pages) $ git add -A
+(pages) $ git commit -m "Actualiza para el despliegue en Heroku"
+(pages) $ git push -u origin master
+</code></pre>
+<h2 id="412-despliegue">4.12 Despliegue<a class="headerlink" href="#412-despliegue" title="Permanent link">¶</a></h2>
+<ul>
+<li>Crear una nueva aplicación en Heroku y enviar el código</li>
+<li>Añadir un "hook" remoto de git para Heroku</li>
+<li>Configurar la aplicación para ignorar los archivos estáticos</li>
+<li>Iniciar el servidor de Heroku para que la aplicación esté activa</li>
+<li>Visitar la aplicación en la URL proporcionada por Heroku</li>
+</ul>
+<h3 id="crear-una-nueva-aplicacion-de-heroku-desde-la-linea-de-comandos-con-heroku-create">Crear una nueva aplicación de Heroku, desde la línea de comandos con heroku create<a class="headerlink" href="#crear-una-nueva-aplicacion-de-heroku-desde-la-linea-de-comandos-con-heroku-create" title="Permanent link">¶</a></h3>
+<pre><code class="language-bash">(pages) $ heroku create
+Creating app... done, 
+https://cryptic-oasis-40349.herokuapp.com/ | https://git.heroku.com/cryptic-oasis-40349.git
+</code></pre>
+<p>Sólo queda hacer un conjunto de configuraciones de Heroku, que son decirle a Heroku que
+ignore los archivos estáticos como CSS y JavaScript que Django por defecto intenta optimizar por nosotros. </p>
+<h3 id="anadir-un-hook-para-heroku-dentro-de-git">Añadir un “hook” para Heroku dentro de git<a class="headerlink" href="#anadir-un-hook-para-heroku-dentro-de-git" title="Permanent link">¶</a></h3>
+<ul>
+<li>Git almacenará tanto la configuración para enviar el código a GitHub como a Heroku.</li>
+</ul>
+<pre><code class="language-bash">(pages) $ heroku git:remote -a cryptic-oasis-40349
+</code></pre>
+<h3 id="configurar-la-aplicacion-para-ignorar-los-archivos-estaticos">Configurar la aplicación para ignorar los archivos estáticos<a class="headerlink" href="#configurar-la-aplicacion-para-ignorar-los-archivos-estaticos" title="Permanent link">¶</a></h3>
+<ul>
+<li>Hay que decirle a Heroku que ignore los archivos estáticos como CSS y JavaScript que Django por defecto intenta optimizar para nosotros (se verá más adelante).</li>
+<li>Por ahora sólo hay que ejecutar:</li>
+</ul>
+<pre><code>(pages) $ heroku config:set DISABLE_COLLECTSTATIC=1
+</code></pre>
+<ul>
+<li>Ahora ya podemos enviar nuestro código a Heroku.</li>
+</ul>
+<pre><code>(pages) $ git push heroku master
+</code></pre>
+<h3 id="iniciar-el-servidor-de-heroku-para-que-la-aplicacion-este-activa">Iniciar el servidor de Heroku para que la aplicación esté activa<a class="headerlink" href="#iniciar-el-servidor-de-heroku-para-que-la-aplicacion-este-activa" title="Permanent link">¶</a></h3>
+<ul>
+<li>Se puede utilizar el nivel más bajo, <code>web=1</code>, que también resulta ser gratuito.</li>
+</ul>
+<pre><code>(pages) $ heroku ps:scale web=1
+</code></pre>
+<h3 id="visitar-la-aplicacion-en-la-url-proporcionada-por-heroku">Visitar la aplicación en la URL proporcionada por Heroku<a class="headerlink" href="#visitar-la-aplicacion-en-la-url-proporcionada-por-heroku" title="Permanent link">¶</a></h3>
+<ul>
+<li>Vistiar algo como https://cryptic-oasis-40349.herokuapp.com ó https://cryptic-oasis-40349.herokuapp.com/about/.</li>
+<li>También puede utilizarse el comando 'heroku open' que abrirá el navegador con una pestaña a nuestra app.</li>
+</ul>
+<h2 id="413-errores-404">4.13 Errores 404<a class="headerlink" href="#413-errores-404" title="Permanent link">¶</a></h2>
+<ul>
+<li>En las URLconf anteriores, se han definido varios patrones URL. ¿Qué pasaría si se solicita una URL diferente a las recogidas en URLconf?</li>
+<li>Para averiguarlo, probar ejecutar el servidor de desarrollo Django e intentar acceder a una página Web como <code>http://127.0.0.1:8000/hello/</code> o <code>http://127.0.0.1:8000/does-not-exist/</code>. Se debería ver el mensaje <em>"Page not found"</em>. (Es linda, ¿no? A la gente de Django seguro le gustan los colores pasteles). Django muestra este mensaje porque se solicitó una URL que no está definida en URLconf.</li>
+</ul>
+<p><img alt="Captura de pantalla de la página 404 de Django." src="../img_pages_app/404.png"/></p>
+<ul>
+<li>La utilidad de esta página va más allá del mensaje básico de error 404; nos dice también, <strong>qué URLconf utilizó Django y todos los patrones de esa URLconf</strong>. Con esa información, tendríamos que ser capaces de establecer porqué la URL solicitada lanzó un error 404.</li>
+<li>Naturalmente, esta es <strong>información importante sólo destinada al programador</strong>. Si esto fuera un sitio en producción alojado en Internet, no quisiéramos mostrar esta información al público. Por esta razón, la página <em>"Page not found"</em> sólo se muestra si el proyecto en Django está en modo de depuración (<em>debug mode</em>). Se explicará cómo desactivar este modo más adelante. Por ahora, todos los proyectos están en modo de depuración cuando se crean, y si el proyecto no lo estuviese, se retornaría una respuesta diferente.l</li>
+</ul>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.b78d2936.min.js"></script>
+<script src="../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
+</html>

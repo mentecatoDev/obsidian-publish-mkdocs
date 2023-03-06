@@ -1,0 +1,962 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../00_por_que_django/" rel="prev"/>
+<link href="../02_configuracion_inicial/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.1" name="generator"/>
+<title>1 Introducción - obsidian-mkdocs template</title>
+<link href="../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="pink" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#1-introduccion">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="obsidian-mkdocs template" class="md-header__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            obsidian-mkdocs template
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              1 Introducción
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="pink" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="pink" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="obsidian-mkdocs template" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    obsidian-mkdocs template
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Obsidian Notes
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Features
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/LaTeX%20Math%20Support/">
+        LaTeX Math Support
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/Mermaid%20Diagrams/">
+        Mermaid diagrams
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/Text%20Formatting/">
+        Text Formatting
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Topic 1
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Topic 1
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Topic%201/Note%201/">
+        Note 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Topic%201/Note%202/">
+        Note 2
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Docs
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Docs
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+        Django
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../00_por_que_django/">
+        ¿Por qué Django?
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          1 Introducción
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        1 Introducción
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-introduccion-a-django">
+    1.1. Introducción a Django
+  </a>
+<nav aria-label="1.1. Introducción a Django" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#111-por-adrian-holovaty-y-jacob-kaplan-moss-diciembre-2009">
+    1.1.1. Por Adrian Holovaty y Jacob Kaplan-Moss  (Diciembre 2009)
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12-la-historia-de-django">
+    1.2. La historia de Django
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13-panorama-general">
+    1.3. Panorama General
+  </a>
+<nav aria-label="1.3. Panorama General" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#131-que-es-un-framework-web">
+    1.3.1. ¿Qué es un Framework Web?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#132-descripcion-de-django">
+    1.3.2 Descripción de Django
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#133-modelos-django">
+    1.3.3. Modelos Django
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#134-bases-de-datos-soportadas">
+    1.3.4. Bases de datos soportadas
+  </a>
+<nav aria-label="1.3.4. Bases de datos soportadas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1341-que-base-de-datos-es-mejor">
+    1.3.4.1. ¿Qué base de datos es mejor?
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#135-plantillas-django">
+    1.3.5. Plantillas Django
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#136-separar-la-logica-del-diseno">
+    1.3.6. Separar la lógica del diseño
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#137-dont-repeat-yourself-dry">
+    1.3.7. Don't Repeat Yourself (DRY)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#138-seguridad-en-las-plantillas">
+    1.3.8. Seguridad en las Plantillas
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#139-vistas-de-django">
+    1.3.9. Vistas de Django
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1310-urlconf-colocando-todo-junto">
+    1.3.10. URLconf - Colocando todo junto
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14-el-plan">
+    1.4. El plan
+  </a>
+<nav aria-label="1.4. El plan" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#141-por-que-django-comes-with-the-box-o-batteries-included">
+    1.4.1. Por qué Django "comes with the box" ó "batteries-included"
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#142-por-que-unos-apuntes">
+    1.4.2. Por qué unos apuntes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#143-estructura">
+    1.4.3 Estructura
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02_configuracion_inicial/">
+        2 Configuración inicial
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03_hello_world_app/">
+        3. Hello World
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../04_pages_app/">
+        4 Pages app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../05_message_board_app/">
+        5. Message Board app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../06_blog_app/">
+        6. Blog app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../07_formularios/">
+        7. Formularios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../08_cuentas_de_usuarios/">
+        8. Cuentas de Usuarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../09_modelo_de_usuario_personalizado/">
+        9. Modelo de usuario personalizado
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10_autenticacion_de_usuarios/">
+        10. Autenticación de usuarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11_bootstrap/">
+        11. Bootstrap
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../12_cambio_y_restauracion_de_contrasenas/">
+        12. Cambio y Restauración de Contraseñas
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../13_email/">
+        13. Correo electrónico
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../14_newspaper_app/">
+        14. Newspaper app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../15_permisos_y_autorizacion/">
+        15. Permisos y Autorización
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../16_comentarios/">
+        16. Comentarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../17_docker/">
+        17. Docker
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../18_postgresql/">
+        18. PostgreSQL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../19_/">
+        19. Proyecto Bookstore
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../20_/">
+        Chapter 4: Pages App
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../21/">
+        21
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../22/">
+        22
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../23/">
+        23
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../24/">
+        24
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../25/">
+        25
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../26/">
+        26
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../27/">
+        27
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../30/">
+        30
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../31/">
+        31
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../32/">
+        32
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../33/">
+        33
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../34/">
+        34
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../35/">
+        35
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../36/">
+        36
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../conclusion/">
+        Conclusión
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../correo_en_django/">
+        Documentación Django
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../la_api_de_sendgrid/">
+        La API de SendGrid
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-introduccion-a-django">
+    1.1. Introducción a Django
+  </a>
+<nav aria-label="1.1. Introducción a Django" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#111-por-adrian-holovaty-y-jacob-kaplan-moss-diciembre-2009">
+    1.1.1. Por Adrian Holovaty y Jacob Kaplan-Moss  (Diciembre 2009)
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12-la-historia-de-django">
+    1.2. La historia de Django
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13-panorama-general">
+    1.3. Panorama General
+  </a>
+<nav aria-label="1.3. Panorama General" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#131-que-es-un-framework-web">
+    1.3.1. ¿Qué es un Framework Web?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#132-descripcion-de-django">
+    1.3.2 Descripción de Django
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#133-modelos-django">
+    1.3.3. Modelos Django
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#134-bases-de-datos-soportadas">
+    1.3.4. Bases de datos soportadas
+  </a>
+<nav aria-label="1.3.4. Bases de datos soportadas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1341-que-base-de-datos-es-mejor">
+    1.3.4.1. ¿Qué base de datos es mejor?
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#135-plantillas-django">
+    1.3.5. Plantillas Django
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#136-separar-la-logica-del-diseno">
+    1.3.6. Separar la lógica del diseño
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#137-dont-repeat-yourself-dry">
+    1.3.7. Don't Repeat Yourself (DRY)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#138-seguridad-en-las-plantillas">
+    1.3.8. Seguridad en las Plantillas
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#139-vistas-de-django">
+    1.3.9. Vistas de Django
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1310-urlconf-colocando-todo-junto">
+    1.3.10. URLconf - Colocando todo junto
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#14-el-plan">
+    1.4. El plan
+  </a>
+<nav aria-label="1.4. El plan" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#141-por-que-django-comes-with-the-box-o-batteries-included">
+    1.4.1. Por qué Django "comes with the box" ó "batteries-included"
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#142-por-que-unos-apuntes">
+    1.4.2. Por qué unos apuntes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#143-estructura">
+    1.4.3 Estructura
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="1-introduccion">1 Introducción<a class="headerlink" href="#1-introduccion" title="Permanent link">¶</a></h1>
+<h2 id="11-introduccion-a-django">1.1. Introducción a Django<a class="headerlink" href="#11-introduccion-a-django" title="Permanent link">¶</a></h2>
+<p>El gran software de código abierto casi siempre se construye porque uno o más desarrolladores inteligentes tenían un problema que resolver y no había ninguna solución viable o rentable disponible. Django no es una excepción. <strong>Adrian</strong> y <strong>Jacob</strong> hace tiempo que se retiraron del proyecto, pero los fundamentos de lo que los llevó a crear Django siguen vivos. Es esta sólida base de experiencia en el mundo real la que ha hecho a Django tan exitoso como es.
+En reconocimiento a su contribución, es mejor que les dejemos presentar a Django con sus propias palabras (editado y reformateado a partir del libro original).</p>
+<h3 id="111-por-adrian-holovaty-y-jacob-kaplan-moss-diciembre-2009">1.1.1. Por <strong>Adrian Holovaty</strong> y <strong>Jacob Kaplan-Moss</strong>  (Diciembre 2009)<a class="headerlink" href="#111-por-adrian-holovaty-y-jacob-kaplan-moss-diciembre-2009" title="Permanent link">¶</a></h3>
+<p><em>En los primeros días, los desarrolladores web escribían cada página a mano. Actualizar un sitio web significaba editar el HTML; un rediseño implicaba rehacer cada una de las páginas, una a una. A medida que los sitios web crecían y se volvían más ambiciosos, se hizo rápidamente evidente que ese enfoque era tedioso, lento y, en última instancia, insostenible.</em></p>
+<p><em>Un grupo de hackers emprendedores del Centro Nacional de Aplicaciones de Supercomputación (la NCSA, donde se desarrolló Mosaic, el primer navegador web gráfico) resolvió este problema dejando que el servidor web utilizara programas externos que pudieran generar HTML de forma dinámica. Llamaron a este protocolo la Interfaz de Entrada Común (CGI Common Gateway Interface), y cambió la web para siempre. Ahora es difícil imaginar lo que debió haber sido la revolución CGI: en lugar de tratar las páginas HTML como simples archivos en disco, CGI permite pensar en las páginas como recursos generados dinámicamente bajo pedido.</em></p>
+<p><em>El desarrollo de CGI marcó el comienzo de la primera generación de sitios web dinámicos. Sin embargo, CGI tiene sus problemas: Los scripts CGI necesitan contener mucho código repetitivo, dificultan la reutilización del código, y pueden ser difíciles de escribir y entender para desarrolladores novatos.</em></p>
+<p><em>PHP solucionó muchos de estos problemas, y asaltó el mundo -ahora es la herramienta más popular usada para crear sitios web dinámicos, y docenas de lenguajes similares (ASP, JSP, etc.) siguieron de cerca el diseño de PHP. La mayor innovación de PHP fue su facilidad de uso: El código PHP es simplemente incrustado en HTML plano; la curva de aprendizaje para alguien que ya conoce HTML es extremadamente suave.</em></p>
+<p><em>Pero PHP tiene sus propios problemas; su gran facilidad de uso fomenta un código descuidado, repetitivo y mal concebido. Peor aún, PHP hace poco para proteger a los programadores de las vulnerabilidades de seguridad, por lo que muchos desarrolladores de PHP se encontraron aprendiendo sobre seguridad una vez que ya era demasiado tarde.</em></p>
+<p><em>Estas y otras frustraciones similares condujeron directamente al desarrollo de la actual cosecha de frameworks de tercera generación. Con esta nueva explosión del desarrollo web viene otro incremento ambicioso; se espera que los desarrolladores web hagan más y más cada día.</em></p>
+<p><em>Django fue inventado para satisfacer estas nuevas ambiciones.</em></p>
+<h2 id="12-la-historia-de-django">1.2. La historia de Django<a class="headerlink" href="#12-la-historia-de-django" title="Permanent link">¶</a></h2>
+<p>Django creció orgánicamente a partir de aplicaciones del mundo real escritas por un equipo de desarrollo web en Lawrence, Kansas, USA. Nació en el <strong>otoño de 2003</strong>, cuando los programadores web del periódico Lawrence Journal-World, <strong>Adrian Holovaty</strong> y <strong>Simon Willison</strong>, comenzaron a usar Python para construir aplicaciones.</p>
+<p>El equipo de World Online, responsable de la producción y mantenimiento de varios sitios de noticias locales, prosperó en un entorno de desarrollo dictado por los plazos del periodismo. Para los sitios -incluyendo LJWorld.com, Lawrence.com y KUsports.com- los periodistas (y la dirección) exigieron que se añadieran características y se construyeran aplicaciones enteras en tiempo record, a menudo con sólo un día o una hora de antelación. Así, Simon y Adrian desarrollaron un framework de desarrollo web que ahorraba tiempo por necesidad, era la única manera en que podían construir aplicaciones mantenibles bajo estos plazos tan reducidos.</p>
+<p>En el verano de 2005, después de haber desarrollado este framework hasta el punto en el que alimentaba eficientemente la mayoría de los sitios de World Online, el equipo, que ahora incluía a <strong>Jacob Kaplan-Moss</strong>, decidió lanzar el framework como <strong>software de código abierto</strong>. Lo lanzaron en <strong>julio de 2005</strong> y lo llamaron <strong>Django</strong>, en honor al guitarrista de jazz <a href="https://es.wikipedia.org/wiki/Django_Reinhardt"><strong>Django Reinhardt</strong></a> (un gitano sinti belga creador del Gipsy Jazz).</p>
+<p>A pesar de que Django ahora es un proyecto de código abierto con colaboradores en todo el mundo, los desarrolladores originales de World Online todavía aportan una guía centralizada para el crecimiento del framework, y World Online colabora con otros aspectos importantes tales como tiempo de trabajo, materiales de marketing, y hosting/ancho de banda para el <a href="http://www.djangoproject.com/">Web site del framework</a>.</p>
+<p>Esta historia es relevante porque ayuda a explicar dos cosas clave:</p>
+<ul>
+<li>
+<p>La primera es <strong>el "punto fuerte" de Django</strong>. Debido a que <strong>Django nació en un entorno de noticias</strong>, ofrece varias características (como su sitio de administración) que son particularmente adecuadas para sitios de "contenido" como amazon.com, craigslist.org y washingtonpost.com que ofrecen información dinámica y basada en bases de datos. No hay que desanimarse por eso, aunque Django es particularmente bueno para desarrollar ese tipo de sitios, eso no impide que sea una herramienta efectiva para construir cualquier tipo de sitio web dinámico. (Hay una diferencia entre ser particularmente eficaz en algo y ser ineficaz en otras cosas).</p>
+</li>
+<li>
+<p>La segunda cuestión a tener en cuenta es cómo <strong>los orígenes de Django han dado forma a la cultura de su comunidad de código abierto</strong>. Debido a que Django fue extraído del código del mundo real, en lugar de ser un ejercicio académico o un producto comercial, está <strong>muy enfocado en resolver los problemas de desarrollo web</strong> que los propios desarrolladores de Django han afrontado -y continúan afrontando. Como resultado, Django mismo se mejora activamente casi a diario. Los encargados de mantenerlo tienen un gran interés en asegurarse de que Django ahorre tiempo a los desarrolladores, produzca aplicaciones fáciles de mantener y que funcionen bien bajo carga.</p>
+</li>
+</ul>
+<p>Django permite construir sitios profundos, dinámicos e interesantes en un tiempo extremadamente corto. Django está diseñado para <strong>permitir concentrarse en las partes divertidas e interesantes</strong> del trabajo mientras <strong>alivia el dolor de las partes repetitivas</strong>. Al hacerlo, proporciona abstracciones de alto nivel de los patrones comunes de desarrollo web, atajos para tareas de programación frecuentes y convenciones claras sobre cómo resolver problemas. Al mismo tiempo, Django trata de mantenerse al margen, dejando trabajar fuera del ámbito del <em>framework</em> según sea necesario.</p>
+<p>Django hace que el desarrollo web sea mejor. Está diseñado para moverse rápidamente por muchos proyectos Django, y luego, en última instancia, enseñar todo lo que se necesita saber para diseñar, desarrollar e implementar con éxito un sitio del que sentirse orgulloso.</p>
+<h2 id="13-panorama-general">1.3. Panorama General<a class="headerlink" href="#13-panorama-general" title="Permanent link">¶</a></h2>
+<h3 id="131-que-es-un-framework-web">1.3.1. ¿Qué es un Framework Web?<a class="headerlink" href="#131-que-es-un-framework-web" title="Permanent link">¶</a></h3>
+<p>Django es un miembro importante de una nueva generación de frameworks Web, pero ¿qué signica ese término exactamente?</p>
+<p>Para contestar esa pregunta, consideremos el diseño de una aplicación Web escrita usando el estándar <em>Common Gateway Interface</em> (CGI), una forma popular de escribir aplicaciones Web alrededor del año 1998. En esa época, cuando escribías una aplicación CGI, <strong>hacías todo por ti mismo</strong> (el equivalente a hacer una torta desde cero). Por ejemplo, aquí hay un script CGI sencillo, escrito en Python, que muestra los diez libros más recientemente publicados de una base de datos:</p>
+<pre><code class="language-python">#!/usr/bin/python
+import MySQLdb
+print ("Content-Type: text/html")
+print()
+print("&lt;html&gt;&lt;head&gt;&lt;title&gt;Libros&lt;/title&gt;&lt;/head&gt;")
+print ("&lt;body&gt;")
+print ("&lt;h1&gt;Los últimos 10 libros&lt;/h1&gt;")
+print ("&lt;ul&gt;")
+conexion = MySQLdb.connect(user='yo', passwd='dejame_entrar', db='mi_base')
+cursor = conexion.cursor()
+cursor.execute("SELECT nombre FROM libros ORDER BY fecha_pub DESC LIMIT 10")
+for fila in cursor.fetchall():
+    print("&lt;li&gt; %s&lt;/li&gt;" % fila[0])
+    print("&lt;/ul&gt;")
+print("&lt;/body&gt;&lt;/html&gt;")
+conexion.close()
+</code></pre>
+<p>Este código es fácil de entender.</p>
+<ul>
+<li>Primero imprime una línea de <code>Content-Type</code>, seguido de una línea en blanco, tal como requiere CGI.</li>
+<li>Imprime HTML introductorio, se conecta a la base de datos y ejecuta una consulta que obtiene los diez libros más recientes. Hace un bucle sobre esos libros y genera una lista HTML desordenada.</li>
+<li>Finalmente imprime el código para cerrar el HTML y cierra la conexión con la base de datos.</li>
+</ul>
+<p>Con una única página dinámica como ésta, el enfoque desde cero no es necesariamente malo. Por un lado, este código es sencillo de comprender; incluso un desarrollador novato puede leer estas 16 líneas de Python y entender todo lo que hace, de principio a fin. No hay más nada que aprender; no hay más código para leer. También es sencillo de utilizar: tan sólo guarda este código en un archivo llamado <code>ultimoslibros.cgi</code>, sube ese archivo a un servidor Web y visita esa página con un navegador.
+Pero a medida que una aplicación Web crece más allá de lo trivial, este enfoque se desmorona y te enfrentas a una serie de problemas:</p>
+<ul>
+<li>
+<p>¿Qué sucede cuando múltiples páginas necesitan conectarse a la base de datos? Seguro que ese código de conexión a la base de datos no debería estar duplicado en cada uno de los scripts CGI, así que la forma pragmática de hacerlo sería refactorizarlo en una función compartida.</p>
+</li>
+<li>
+<p>¿Debería un desarrollador realmente tener que preocuparse por imprimir la línea de <code>Content-Type</code> y acordarse de cerrar la conexión con la base de datos? Este tipo de código repetitivo reduce la productividad del programador e introduce la oportunidad para que se cometan errores. Estas tareas de configuración y cierre estarían mejor manejadas por una infraestructura común.</p>
+</li>
+<li>
+<p>¿Qué sucede cuando este código es reutilizado en múltiples entornos, cada uno con una base de datos y contraseñas diferentes? En ese punto, se vuelve esencial alguna configuración específica del entorno.</p>
+</li>
+<li>
+<p>¿Qué sucede cuando un diseñador Web que no tiene experiencia programando en Python desea rediseñar la página? Lo ideal sería que la lógica de la página (la búsqueda de libros en la base de datos) esté separada del código HTML de la página, de modo que el diseñador pueda hacer modificaciones sin afectar la búsqueda.</p>
+</li>
+</ul>
+<p>Precisamente estos son los problemas que un framework Web intenta resolver. Un framework Web provee una infraestructura de programación para tus aplicaciones, para que puedas concentrarte en escribir código limpio y de fácil mantenimiento sin tener que reinventar la rueda.</p>
+<p>En resumidas cuentas, eso es lo que hace <strong>Django</strong>.</p>
+<h3 id="132-descripcion-de-django">1.3.2 Descripción de Django<a class="headerlink" href="#132-descripcion-de-django" title="Permanent link">¶</a></h3>
+<p><strong>Empezar con Django es difícil</strong> porque es un proyecto muy grande, pero entender cómo se unen todas las partes a un alto nivel, permite dominar Django mucho más rápido.</p>
+<p>En el nivel más alto, <strong>Django es un marco de trabajo Modelo-Vista-Controlador ó MVC</strong>.</p>
+<p>MVC es un patrón de diseño de software que tiene como objetivo separar una aplicación web en tres partes interconectadas:</p>
+<ol>
+<li>
+<p>El <strong>modelo</strong>, que proporciona la interfaz con la base de datos que contiene los datos de la aplicación</p>
+</li>
+<li>
+<p>La <strong>vista</strong>, que decide qué información presentar al usuario y recoge información del usuario</p>
+</li>
+<li>
+<p>El <strong>controlador</strong>, que gestiona la lógica de negocio de la aplicación y actúa como un intermediario de información entre el modelo y la vista.</p>
+</li>
+</ol>
+<p>Django utiliza una terminología ligeramente diferente en su aplicación del MVC. En Django:</p>
+<ol>
+<li>
+<p>El <strong>modelo</strong> es funcionalmente el mismo. El mapeo de objetos relacionales de Django (ORM - <em>Object Relational Mapping</em>) proporciona la interfaz para la base de datos de la aplicación.</p>
+</li>
+<li>
+<p>La <strong>plantilla</strong> proporciona la lógica de visualización y es la interfaz entre el usuario y la aplicación Django.</p>
+</li>
+<li>
+<p>La <strong>vista</strong> gestiona el grueso de las aplicaciones de proceso de datos, la lógica de las aplicaciones y la mensajería.</p>
+</li>
+</ol>
+<p><img alt="Django Tutorials - Django MTV Design Pattern" src="../img_introduccion/MTV-Pattern.png"/></p>
+<p>El patrón de diseño de MVC se ha utilizado tanto para aplicaciones de escritorio como para aplicaciones web durante muchos años, por lo que hay un gran número de variaciones en este tema, de las que Django no es una excepción. Si se desea profundizar un poco más en el patrón de diseño de MVC, sólo se debe advertir que <strong>la gente puede ser muy apasionada sobre lo que es una interpretación</strong> diferente de la misma cosa. Tomando prestada una cita del equipo de desarrollo de Django:</p>
+<blockquote>
+<p>"Al final del día, por supuesto, todo se reduce a hacer las cosas. Y, sin importar el nombre que se les dé, Django las hace de la manera más lógica para nosotros."</p>
+</blockquote>
+<h3 id="133-modelos-django">1.3.3. Modelos Django<a class="headerlink" href="#133-modelos-django" title="Permanent link">¶</a></h3>
+<p>Los <strong>modelos de Django</strong> proporcionan un <strong>mapeo a objetos relacionales</strong> (ORM <em>Object-Relational Mapper</em>) <strong>de la base de datos</strong> subyacente. ORM es una poderosa técnica de programación que facilita el trabajo con datos y bases de datos relacionales.</p>
+<p><strong>La mayoría de las bases de datos</strong> comunes se programan con alguna forma del Lenguaje de Consulta Estructurado (<strong>SQL Structured Query Language</strong>), sin embargo cada base de datos implementa el SQL a su manera. El SQL puede ser bastante complejo y difícil de aprender. <strong>Una herramienta ORM, por otro lado, proporciona un mapeo simple entre un <em>objeto</em> (la 'O' en ORM) y la base de datos</strong> subyacente, sin que el programador necesite conocer la estructura de la base de datos, o requiera un SQL complejo para manipular y recuperar los datos.</p>
+<p><img alt="Django Tutorials - Django ORM" src="../img_introduccion/Django-Models.png"/></p>
+<p>En Django, <strong>el modelo es el objeto que se asigna a la base de datos</strong>. Cuando se <strong>crea</strong> un modelo, Django <strong>crea una tabla correspondiente</strong> en la base de datos, sin tener que escribir una sola línea de SQL. Django <strong>antepone al nombre de la tabla el nombre de la aplicación</strong> Django.</p>
+<p><img alt="Django Tutorials - Model Table" src="../img_introduccion/model_table_1.png"/></p>
+<p><strong>El modelo también vincula la información relacionada en la base de datos</strong>. En la figura, se crea un segundo modelo para hacer un seguimiento de los cursos en los que está inscrito un usuario. Repetir toda la información de los usuarios en la tabla <code>yourapp_Course</code> iría en contra de los buenos principios de diseño, por lo que en su lugar se crea una <em>relación</em> (la 'R' en ORM) entre la tabla <code>yourapp_Course</code> y la tabla <code>yourapp_UserProfile</code>.</p>
+<p><img alt="Django Tutorials - Model Relationships" src="../img_introduccion/model_table_2.png"/></p>
+<p>Esta relación se crea enlazando los modelos con una <em>clave foránea</em>, es decir, el campo <code>user_id</code> en la tabla <code>yourapp_Course</code> es un campo clave que está enlazado con el campo <code>id</code> en la tabla foránea <code>yourapp_UserProfile</code>.</p>
+<p>Esto es solo una simplificación, pero es una visión general útil de cómo el ORM de Django utiliza los datos del modelo para crear tablas de bases de datos. Las cosas se aclaran una vez que se tiene la oportunidad de construir modelos reales.</p>
+<h3 id="134-bases-de-datos-soportadas">1.3.4. Bases de datos soportadas<a class="headerlink" href="#134-bases-de-datos-soportadas" title="Permanent link">¶</a></h3>
+<p>Django soporta oficialmente cuatro bases de datos:</p>
+<ul>
+<li>
+<p>PostgreSQL</p>
+</li>
+<li>
+<p>MySQL</p>
+</li>
+<li>
+<p>SQLite</p>
+</li>
+<li>
+<p>Oracle</p>
+</li>
+</ul>
+<p>Hay varias aplicaciones de terceros para conectarse a otras bases de datos, si es necesario conectarse a una base de datos con soporte no oficial.</p>
+<p><strong>La preferencia de la mayoría de los desarrolladores de Django es PostgreSQL</strong>. MySQL también es un backend de base de datos bastante común para Django. Instalar y configurar una base de datos no es una tarea para un principiante; afortunadamente, Django instala y configura SQLite de forma automática.</p>
+<h4 id="1341-que-base-de-datos-es-mejor">1.3.4.1. ¿Qué base de datos es mejor?<a class="headerlink" href="#1341-que-base-de-datos-es-mejor" title="Permanent link">¶</a></h4>
+<p><strong>Primero lo fácil</strong>: SQLite es para el desarrollo y pruebas tempranas. No debe ser usado en producción. Nunca.</p>
+<p><strong>La siguiente respuesta es más fácil</strong>: Oracle es para grandes corporaciones con grandes bolsillos. Es poco probable que se tenga que decidir si se utiliza Oracle a menos que se sea una gran empresa, y entonces puede que esa sea la <em>única</em> elección posible.</p>
+<p><strong>En cuanto a PostgreSQL y MySQL</strong>: Hay razones definitivas por las que PostgreSQL es una mejor base de datos que MySQL. Sin embargo, para cuando se tenga suficiente experiencia para entender por qué, se estará en posición de juzgar más apropiadamente. La mayoría de las veces la elección la habrá hecho el cliente, el empleador o el anfitrión de la web.</p>
+<p>El programador inteligente evita este tipo de argumentos: <strong>Si se puede, utilizar PostgreSQL, de lo contrario MySQL también está bien</strong>.</p>
+<h3 id="135-plantillas-django">1.3.5. Plantillas Django<a class="headerlink" href="#135-plantillas-django" title="Permanent link">¶</a></h3>
+<p><strong>Una plantilla Django es un archivo de texto diseñado para separar los datos de una aplicación de la forma en que se presenta</strong>. En la mayoría de los casos, las plantillas Django son archivos de <em>Lenguaje de Marcas de Hipertexto</em> (HTML) para presentar los datos de la aplicación en un navegador web, sin embargo, las plantillas Django no se limitan al HTML, sino que pueden utilizarse para presentar varios formatos de texto diferentes.</p>
+<p>El diseño de las plantillas de Django se basa en varios principios básicos, sin embargo, tres son fundamentales:</p>
+<ol>
+<li>Un sistema de plantillas debe <strong>separar la lógica</strong> del programa <strong>del diseño</strong> de la web.</li>
+<li>Las plantillas deben <strong>desalentar la redundancia</strong>: no te repitas (DRY <em>Don't Repeat Yourself</em>).</li>
+<li>El sistema de plantillas debe ser <strong>seguro</strong> y estar <strong>a salvo de la ejecución de código</strong> en él.</li>
+</ol>
+<h3 id="136-separar-la-logica-del-diseno">1.3.6. Separar la lógica del diseño<a class="headerlink" href="#136-separar-la-logica-del-diseno" title="Permanent link">¶</a></h3>
+<p>El <strong>diseño</strong> y la <strong>programación</strong> web son <strong>dos disciplinas muy diferentes</strong>. En todos los proyectos, excepto en los más pequeños, el diseño y la programación no la hace el mismo equipo; en muchos casos, ni siquiera la misma compañía.</p>
+<p>Cuando los creadores de Django consideraron por primera vez el diseño del sistema de plantillas de Django, quedó claro que los <strong>programadores</strong> y <strong>diseñadores</strong> de sitios web de Django deberían ser capaces de <strong>trabajar de forma independiente</strong>. El resultado es un <strong>lenguaje de scripting</strong> de texto plano que utiliza <strong><em>tags</em></strong> para proporcionar una lógica de presentación para decidir qué contenido mostrar en la plantilla.</p>
+<p>Esto es más fácil de entender con un simple ejemplo:</p>
+<pre><code class="language-html">&lt;h1&gt;Información de su pedido&lt;/h1&gt;
+&lt;p&gt;Apreciado Sr. {{ person_name }},&lt;/p&gt;
+</code></pre>
+<p>Este podría ser el primer par de líneas de una página de confirmación de pedido, que se muestra en un sitio web después de que el usuario haya hecho una compra. Nótese que la mayoría de este código es HTML simple. <strong>La pequeña parte escrita entre llaves es una <em>etiqueta de variable</em> de Django</strong>. Cuando esta plantilla se muestre en el navegador, la plantilla sustituirá la variable <code>person_name</code> por el nombre que se le pase a la vista.</p>
+<p>Como se trata de texto plano y HTML, <strong>un diseñador no necesita saber nada sobre Django para poder crear una plantilla Django</strong>. Todo lo que el diseñador tiene que hacer es añadir un marcador de posición (etiqueta de comentario HTML, por ejemplo), para que el programador lo sustituya por una etiqueta Django al codificar el sitio web.</p>
+<p>La otra gran ventaja de este enfoque es que, dado que la mayor parte de la plantilla es HTML simple, como programador, <strong>se puede crear un sitio web de buena apariencia sin un diseñador</strong>: se puede descargar una plantilla HTML de Internet y agregar etiquetas de plantilla Django. Esto también funciona con las plantillas <em>Bootstrap</em> y los sitios pesados en la parte de <em>front-end</em> con JavaScript.</p>
+<h3 id="137-dont-repeat-yourself-dry">1.3.7. Don't Repeat Yourself (DRY)<a class="headerlink" href="#137-dont-repeat-yourself-dry" title="Permanent link">¶</a></h3>
+<p>DRY (Don't Repeat Yourself) es un término que aparece a menudo en el discurso de Django, ya que es <strong>uno de los principios fundamentales de Django</strong>. El principio DRY es particularmente evidente en cómo Django utiliza la <strong><em>herencia de plantillas</em></strong>.</p>
+<p>Para entender mejor cómo la herencia de plantillas nos ayuda a minimizar la repetición y el código redundante, vamos a examinar primero un diseño típico de una página web.</p>
+<p><img alt="Django Tutorials - Webpage Template" src="../img_introduccion/template_full.png"/></p>
+<p>Este diseño de página tiene <strong>una navegación superior, una imagen de cabecera, un menú lateral izquierdo, el contenido principal de la página y un pie de página</strong>. Si sólo se quisiera crear unas pocas páginas web, se podría copiar la página principal y simplemente <strong>cambiar el contenido</strong> y guardar cada página diferente como un archivo HTML.</p>
+<p>El problema es que no sólo estamos repitiendo mucho código, sino que el mantenimiento de un sitio grande podría salirse rápidamente de control. ¡Se tendría que hacer el cambio en cada una de las páginas del sitio!.</p>
+<p>Este problema se soluciona creando <strong>una plantilla principal con el contenido común</strong> a todo el sitio web para luego crear plantillas secundarias que heredan estas características comunes y a las que, más tarde, se les agregará cualquier contenido que sea específico.</p>
+<p><img alt="img" src="../img_introduccion/template_both.png"/></p>
+<p>Se habrá notado que se incluyó la navegación de la barra lateral del hijo. Es común que ciertas páginas de un sitio tengan una navegación limitada, así que no todas las páginas necesitarán la navegación lateral.</p>
+<p>Django también admite la herencia múltiple, por lo que, siguiendo con el ejemplo anterior, se podría tener una plantilla hija que agregue sólo la navegación lateral al padre, y luego tener una tercera plantilla que herede de la hija y agregue el contenido.</p>
+<p>El único límite a la herencia de plantillas de Django es el práctico: <strong>si se tienen plantillas que heredan más de dos o tres niveles de profundidad, se debería reevaluar el diseño del sitio</strong>.</p>
+<h3 id="138-seguridad-en-las-plantillas">1.3.8. Seguridad en las Plantillas<a class="headerlink" href="#138-seguridad-en-las-plantillas" title="Permanent link">¶</a></h3>
+<p>La filosofía de Django es que Internet ya es lo suficientemente insegura como para introducir más problemas de seguridad al permitir la ejecución de código dentro de las plantillas de las páginas web. La solución de Django a las vulnerabilidades de seguridad de las plantillas es simple: <strong>la ejecución de código está prohibida en las plantillas</strong>.</p>
+<p>Las etiquetas de las plantillas de Django proporcionan sólo lógica de visualización, esto incluye:</p>
+<ul>
+<li><strong>Mostrar variables</strong>: puede ser un texto simple como el nombre de un usuario, o datos más complejos como texto con formato HTML.</li>
+<li><strong>Elegir el contenido que se va a mostrar</strong>: basándose en comprobaciones lógicas, por ejemplo, si un usuario está conectado, entonces mostrar el menú de usuario o el contenido de ese usuario.</li>
+<li><strong>Iterar sobre las listas de datos</strong>: lo más frecuente es que se utilice para insertar información de la base de datos en las listas de HTML.</li>
+<li><strong>Formateo de los datos</strong>: por ejemplo, formato de fecha, manipulación de texto y otros filtros que actúan sobre los datos.</li>
+</ul>
+<p>Cosas que <strong>no</strong> se pueden hacer en una plantilla Django:</p>
+<ul>
+<li><strong>Ejecutar código Python</strong></li>
+<li><strong>Asignar un valor a una variable</strong></li>
+<li><strong>Realizar lógica avanzada</strong></li>
+</ul>
+<p>Las plantillas de Django también añaden <strong>características de seguridad adicionales</strong> como el <strong>escape automático de todas las cadenas</strong>, <strong>Cross-Site Scripting</strong> y la protección <strong>Cross-Site Request Forgery</strong>. Estos dos últimos temas van más allá de un texto inicial, pero es útil comprender que <strong>las plantillas de Django son seguras de forma predeterminada</strong>, por lo que no hay que preocuparse de introducir problemas de seguridad en el sitio web de forma accidental.</p>
+<h3 id="139-vistas-de-django">1.3.9. Vistas de Django<a class="headerlink" href="#139-vistas-de-django" title="Permanent link">¶</a></h3>
+<p>Las vistas de Django son los <em>brokers</em> de información de una aplicación de Django. <strong>Una vista obtiene los datos de la base de datos</strong> (o de una fuente o servicio de datos externos) <strong>y los entrega a una plantilla</strong>.</p>
+<ul>
+<li>En el caso de una <strong>aplicación web</strong>, la vista entrega el contenido de la página web y las plantillas</li>
+<li>En el caso de una <strong>API RESTful</strong>, este contenido podría estar formateado adecuadamente en datos JSON.</li>
+</ul>
+<p>La vista <strong>toma decisiones</strong> sobre los datos que se entregan a la plantilla, ya sea actuando sobre la entrada del usuario o en respuesta a otra lógica de negocio y procesos internos.</p>
+<p><strong>Cada vista de Django realiza una función específica y tiene una plantilla asociada</strong>. Las vistas están representadas por una <strong>función</strong> Python, o un <strong>método</strong> de una clase Python. En los inicios de Django, sólo existían vistas basadas en funciones, sin embargo, a medida que Django ha ido creciendo a lo largo de los años, los desarrolladores de Django añadieron a Django vistas basadas en clases.</p>
+<p>Las <strong>vistas basadas en clases</strong> añaden <strong>extensibilidad</strong> a las vistas de Django, así como vistas incorporadas que hacen que la creación de vistas comunes (como la visualización de una lista de artículos) sea más fácil de implementar. No preocuparse demasiado por las diferencias entre las vistas basadas en funciones y las basadas en clases por ahora.</p>
+<p>Para aliviar la carga de los programadores, muchas tareas de visualización comunes tienen vistas incorporadas en Django. Hay <strong>cuatro vistas incorporadas</strong> basadas en <strong>funciones</strong> para mostrar las páginas de error:</p>
+<ul>
+<li>La vista <strong>404</strong> (page not found)</li>
+<li>La vista <strong>500</strong> (server error)</li>
+<li>La vista <strong>403</strong> (HTTP Forbidden)</li>
+<li>La vista <strong>400</strong> (bad request)</li>
+</ul>
+<p>También hay <strong>varias vistas basadas en clases</strong> para simplificar las <strong>tareas comunes de visualización</strong>. Entre ellas se incluyen:</p>
+<ul>
+<li><code>ListView</code> para mostrar una lista de objetos de datos (por ejemplo, lista de todos los artículos)</li>
+<li><code>DetailView</code> para mostrar un solo objeto (por ejemplo, un artículo individual)</li>
+<li><code>RedirectView</code> redirige a otra URL</li>
+<li><code>FormView</code> para mostrar un formulario</li>
+</ul>
+<p>También se proporcionan <strong>vistas de fechas genéricas</strong> adicionales basadas en clases para mostrar colecciones de objetos de día, semana, mes y año, como entradas de blog y artículos.</p>
+<h3 id="1310-urlconf-colocando-todo-junto">1.3.10. URLconf - Colocando todo junto<a class="headerlink" href="#1310-urlconf-colocando-todo-junto" title="Permanent link">¶</a></h3>
+<p>Un sitio web no es de mucha utilidad si no se puede navegar por él: <strong>hay que decirle a la vista qué mostrar en el navegador, en base a lo que el usuario ha solicitado</strong>.</p>
+<p>La navegación en un sitio web Django es la misma que en cualquier otro sitio web: <strong>las páginas y otros contenidos se acceden a través de la URL</strong>. Cuando un usuario hace clic en un enlace de un sitio web, se envía una solicitud de esa URL a Django.</p>
+<p><img alt="img" src="../img_introduccion/browser2django.png"/></p>
+<p>Una vez que Django recibe la URL solicitada, debe decidir qué vista se ocupará de la solicitud. El programador decide qué vista servirá en qué URL creando una <strong>Configuración de URL</strong> (URLconf para abreviar) en un archivo de Python llamado <code>urls.py</code>. Cuando Django encuentra una URL en <code>urls.py</code> que coincide con la URL solicitada, llama a la vista asociada a esa URL.</p>
+<p><img alt="Django Tutorials - URLs to View" src="../img_introduccion/urls2view.png"/></p>
+<p>La vista seleccionada entonces renderiza el contenido a una plantilla, según la lógica de negocio de la vista y envía el contenido renderizado de vuelta al navegador para su visualización.</p>
+<p><img alt="Django Tutorials - Views to Browser" src="../img_introduccion/views2browser.png"/></p>
+<p>Por supuesto, esto es una simplificación: <strong>Django puede recoger datos mucho más complejos del navegador que una URL</strong>, y las vistas no sólo representan páginas web. También hay <strong>otra capa colchón</strong> en Django que se sitúa entre la solicitud del navegador y la respuesta de la vista (a la que Django llama, de forma bastante inteligente, "<strong>middleware</strong>") que permite hacer toneladas de cosas geniales con los datos.</p>
+<p>La <strong>clave</strong> aquí es que, independientemente de lo complejo que sea un sitio web, este <strong>simple proceso</strong> subyace en toda la comunicación entre Django, el navegador y el usuario final.</p>
+<p>Así que eso es todo en cuanto a nuestra mirada de alto nivel a la estructura de Django y de cómo Django se comunica con el navegador para mostrar el contenido de un sitio.</p>
+<p><strong>No es preocupante si se está todavía un poco confundido con todo esto. A medida que se profundiza y se empieza a desarrollar aplicaciones reales de Django, se hace mucho más fácil comprender cómo funciona todo.</strong></p>
+<h2 id="14-el-plan">1.4. El plan<a class="headerlink" href="#14-el-plan" title="Permanent link">¶</a></h2>
+<ul>
+<li>Aprendizaje basado en proyectos </li>
+<li>5 Proyectos progresivos</li>
+<li>Libre y Open Source</li>
+<li>Lo que hace que Django sea impresionante es su filosofía de "viene en la caja" ó "pilas incluidas" (<em>"comes with the box"</em> ó <em>"batteries-included"</em>). Permite una rápida implementación porque las partes más importantes ya están allí.</li>
+<li>Robusto </li>
+<li>Instagram, Pinterest (Flask; más personalizable y adecuado para  API's), Bitbucket, Disqus, Nasa, Mozilla Firefox, Onion, Mahalo, The  Washington Post, Eventbrite</li>
+<li>Se usará <code>pipenv</code>/<code>poetry</code></li>
+</ul>
+<h3 id="141-por-que-django-comes-with-the-box-o-batteries-included">1.4.1. Por qué Django <em>"comes with the box"</em> ó <em>"batteries-included"</em><a class="headerlink" href="#141-por-que-django-comes-with-the-box-o-batteries-included" title="Permanent link">¶</a></h3>
+<ul>
+<li>La mayoría de los sites usan las mismas funcionalidades básicas </li>
+<li>Autenticación de usuarios</li>
+<li>Conexión a bases de datos</li>
+<li>Rutas</li>
+<li>Contenidos de una página</li>
+<li>Gestión de la seguridad</li>
+<li>Interfaz de administración</li>
+<li>etc.</li>
+<li>Hay que centrarse en <strong>nuevas</strong> funcionalidades: no reinventar la rueda.</li>
+<li>Django abraza el "batteries-included" frente a la aproximación "microframework" (Flask). </li>
+<li>Menos flexible pero también menos tendente al error (Django) frente a más personalizable y simple (Flask).</li>
+<li>Es un entorno muy maduro (2005).</li>
+<li>Aprendamos de las mejores prácticas.</li>
+</ul>
+<h3 id="142-por-que-unos-apuntes">1.4.2. Por qué unos apuntes<a class="headerlink" href="#142-por-que-unos-apuntes" title="Permanent link">¶</a></h3>
+<ul>
+<li>Django está bien <a href="https://docs.djangoproject.com/en/4.1/">documentado</a> pero es difícil de abordar para el principiante</li>
+<li>Incluso el <a href="https://docs.djangoproject.com/en/4.1/intro/tutorial01/">tutorial básico</a> es notablemente arduo</li>
+<li>El problema viene de que está orientado a la <strong>profundidad</strong> y no a la <strong>facilidad de uso</strong></li>
+<li>Aunque no es estrictamente necesario, se recomienda tener conocimientos sobre Python, HTML y CSS</li>
+</ul>
+<h3 id="143-estructura">1.4.3 Estructura<a class="headerlink" href="#143-estructura" title="Permanent link">¶</a></h3>
+<p>1.Introducción</p>
+<p>2.Configuración inicial </p>
+<ul>
+<li>Django 4.1</li>
+<li>Python 3.10</li>
+<li>Pipenv/Poetry</li>
+<li>Emacs/Vim/VS Codium/Pycharm</li>
+<li>Terminal</li>
+</ul>
+<p>3.Aplicación "Hello World"</p>
+<ul>
+<li>Configuración de un proyecto Django</li>
+<li>Git/GitLab/BitBucker</li>
+</ul>
+<p>4.Aplicación "Pages" </p>
+<ul>
+<li>Don't Repeat Yourserlf (DRY)</li>
+<li>Platform as a service (PaaS): Heroku</li>
+</ul>
+<p>5.Aplicación "Message Board"</p>
+<ul>
+<li>Bases de datos: ORM</li>
+<li>Test</li>
+<li>GitHub</li>
+<li>Heroku</li>
+</ul>
+<p>6-8.Aplicación "Blog" </p>
+<ul>
+<li>CRUD (Create-Read-Update-Delete)</li>
+<li>log in, log out, sign up</li>
+</ul>
+<p>9.Aplicación "Newspaper" </p>
+<ul>
+<li>Concepto de "Modelos de usuario personalizados"</li>
+</ul>
+<p>10.Autenticación de usuarios </p>
+<p>11.Bootstrap </p>
+<p>12-13.Reseteo y cambio de contraseñas vía email </p>
+<p>14-15.Artículos y comentarios para "Newspaper" </p>
+<ol>
+<li>"Hasta el infinito y más allá"</li>
+</ol>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.b78d2936.min.js"></script>
+<script src="../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,670 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../14_newspaper_app/" rel="prev"/>
+<link href="../16_comentarios/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.1" name="generator"/>
+<title>15. Permisos y Autorización - obsidian-mkdocs template</title>
+<link href="../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="pink" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#15-permisos-y-autorizacion">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="obsidian-mkdocs template" class="md-header__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            obsidian-mkdocs template
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              15. Permisos y Autorización
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="pink" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="pink" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="obsidian-mkdocs template" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    obsidian-mkdocs template
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Obsidian Notes
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Features
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/LaTeX%20Math%20Support/">
+        LaTeX Math Support
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/Mermaid%20Diagrams/">
+        Mermaid diagrams
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/Text%20Formatting/">
+        Text Formatting
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Topic 1
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Topic 1
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Topic%201/Note%201/">
+        Note 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Topic%201/Note%202/">
+        Note 2
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Docs
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Docs
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+        Django
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../00_por_que_django/">
+        ¿Por qué Django?
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01_introduccion/">
+        1 Introducción
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02_configuracion_inicial/">
+        2 Configuración inicial
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03_hello_world_app/">
+        3. Hello World
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../04_pages_app/">
+        4 Pages app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../05_message_board_app/">
+        5. Message Board app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../06_blog_app/">
+        6. Blog app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../07_formularios/">
+        7. Formularios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../08_cuentas_de_usuarios/">
+        8. Cuentas de Usuarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../09_modelo_de_usuario_personalizado/">
+        9. Modelo de usuario personalizado
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10_autenticacion_de_usuarios/">
+        10. Autenticación de usuarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11_bootstrap/">
+        11. Bootstrap
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../12_cambio_y_restauracion_de_contrasenas/">
+        12. Cambio y Restauración de Contraseñas
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../13_email/">
+        13. Correo electrónico
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../14_newspaper_app/">
+        14. Newspaper app
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          15. Permisos y Autorización
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        15. Permisos y Autorización
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#151-createview-mejorado">
+    15.1. CreateView mejorado
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#152-autorizaciones">
+    15.2. Autorizaciones
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#153-mixins">
+    15.3. Mixins
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#154-actualizando-las-vistas">
+    15.4 Actualizando las vistas
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conclusion">
+    Conclusión
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../16_comentarios/">
+        16. Comentarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../17_docker/">
+        17. Docker
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../18_postgresql/">
+        18. PostgreSQL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../19_/">
+        19. Proyecto Bookstore
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../20_/">
+        Chapter 4: Pages App
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../21/">
+        21
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../22/">
+        22
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../23/">
+        23
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../24/">
+        24
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../25/">
+        25
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../26/">
+        26
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../27/">
+        27
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../30/">
+        30
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../31/">
+        31
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../32/">
+        32
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../33/">
+        33
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../34/">
+        34
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../35/">
+        35
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../36/">
+        36
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../conclusion/">
+        Conclusión
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../correo_en_django/">
+        Documentación Django
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../la_api_de_sendgrid/">
+        La API de SendGrid
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#151-createview-mejorado">
+    15.1. CreateView mejorado
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#152-autorizaciones">
+    15.2. Autorizaciones
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#153-mixins">
+    15.3. Mixins
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#154-actualizando-las-vistas">
+    15.4 Actualizando las vistas
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conclusion">
+    Conclusión
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="15-permisos-y-autorizacion">15. Permisos y Autorización<a class="headerlink" href="#15-permisos-y-autorizacion" title="Permanent link">¶</a></h1>
+<ul>
+<li>Si se quiere que el periódico sea financieramente sostenible se podría añadir una app de <em>pagos</em> para cobrar por el acceso, para lo que se requiere un <strong>proceso de autorización</strong>, diferente al <strong>proceso de autenticación</strong>. La autorización restringe el acceso; la autenticación permite el flujo de registro e inicio de sesión de un usuario.</li>
+<li>Django incorpora una funcionalidad de autorización que se puede utilizar rápidamente. </li>
+</ul>
+<h2 id="151-createview-mejorado">15.1. <code>CreateView</code> mejorado<a class="headerlink" href="#151-createview-mejorado" title="Permanent link">¶</a></h2>
+<ul>
+<li>Se van a establecer permisos de edición/borrado para que sólo el autor de un artículo pueda hacer tales cambios.</li>
+<li>Se va a eliminar el autor de los campos y en su lugar se establecerá automáticamente a través del método <code>form_valid</code>.</li>
+</ul>
+<p>FICHERO: <code>articles/views.py</code></p>
+<pre><code class="language-python">`...`
+class ArticleCreateView(CreateView):
+    model = Article
+    template_name = 'article_new.html'
+    fields = ('title', 'body')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+`...`
+</code></pre>
+<blockquote>
+<p>Las vistas genéricas basadas en clases son increíbles para empezar nuevos proyectos, pero cuando se quieren personalizar, es necesario remangarse y empezar a entender lo que pasa bajo el capó. Lo más probable es que lo que estás intentando hacer ya haya sido resuelto en algún lugar, ya sea dentro de Django mismo o en un foro como Stack Overflow. No tengas miedo de pedir ayuda!</p>
+</blockquote>
+<ul>
+<li>Ahora el autor ya no es un campo a rellenar si se crea un nuevo artículo sino que se establece automáticamente según el usuario actual conectado.</li>
+</ul>
+<h2 id="152-autorizaciones">15.2. Autorizaciones<a class="headerlink" href="#152-autorizaciones" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p>Hay múltiples problemas en torno a la falta de autorizaciones en nuestro proyecto actual.</p>
+<ul>
+<li>
+<p>Nos gustaría restringir el acceso sólo a los usuarios para tener la opción de cobrar un día a los lectores de nuestro periódico.</p>
+</li>
+<li>
+<p>Cualquier usuario desconectado al azar que conozca la URL correcta puede acceder a cualquier parte del sitio.</p>
+</li>
+<li>
+<p>¿Qué pasaría si un usuario que ha cerrado la sesión intentara crear un nuevo artículo? Para probarlo haga clic en su nombre de usuario en la esquina superior derecha de la barra de navegación y seleccione "Cerrar sesión" en las opciones desplegables. El enlace "+ Nuevo" desaparece de la barra de navegación, pero ¿qué ocurre si vas directamente a: http://127.0.0.1:8000/articles/new/?: La página sigue ahí.</p>
+</li>
+<li>Intenta crear un nuevo artículo y pulsar el botón "Grabar".</li>
+<li>ERROR: El modelo espera un campo <code>author</code> que está enlazado al usuario logeado, pero, como no hay ninguno, no hay autor tampoco y por tanto el envío falla. ¿Qué hacer?</li>
+</ul>
+</li>
+</ul>
+<h2 id="153-mixins">15.3. Mixins<a class="headerlink" href="#153-mixins" title="Permanent link">¶</a></h2>
+<ul>
+<li>Hay que establecer algunas autorizaciones para que sólo los usuarios registrados puedan acceder al sitio. Para ello se puede utilizar un <strong>mixin</strong>, que es un <em>tipo especial de herencia múltiple que Django utiliza para evitar la duplicación de código y permitir la personalización</em>.<ul>
+<li>Por ejemplo, el <code>ListView</code> genérico incorporado necesita una forma de devolver una plantilla. Pero también lo hace <code>DetailView</code> y, de hecho, casi todas las demás vistas. En lugar de repetir el mismo código en cada gran vista genérica, Django descompone esta funcionalidad en una "mezcla" conocida como <code>TemplateResponseMixin</code>. Tanto la <code>ListView</code> como la <code>DetailView</code> usan esta mezcla para mostrar la plantilla adecuada.</li>
+<li>Para restringir el acceso a la vista a sólo los usuarios conectados, Django tiene un mixin <code>LoginRequired</code> que se puede utilizar.</li>
+</ul>
+</li>
+</ul>
+<p>FICHERO: <code>articles/views.py</code></p>
+<pre><code class="language-python">from django.contrib.auth.mixins import LoginRequiredMixin # new
+from django.views.generic import ListView, DetailView
+from django.views.generic.edit import UpdateView, DeleteView, CreateView
+from django.urls import reverse_lazy
+
+from .models import Article
+
+`...`
+class ArticleCreateView(LoginRequiredMixin, CreateView): # new
+
+</code></pre>
+<ul>
+<li>Regresar a la URL para crear nuevos mensajes en http://127.0.0.1:8000/articles/new/ y se verá un error:<ul>
+<li>Django se ha redirigido automáticamente a la ubicación por defecto de la página de inicio de sesión que está en <code>/accounts/login</code>, sin embargo, en los URLs a nivel de proyecto se usa  <code>users/</code> como ruta. Por eso la página de acceso está en <code>users/login</code>. Entonces, ¿cómo se informa a <code>ArticleCreateView</code> sobre esto?</li>
+<li>La respuesta está en la documentación para <code>LoginRequiredMixin</code>. Se puede agregar una ruta <code>login_url</code> para anular el parámetro por defecto. Se usa la URL con nombre de la ruta <code>login</code>.</li>
+</ul>
+</li>
+</ul>
+<p>FICHERO: <code>articles/views.py</code></p>
+<pre><code class="language-python">from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from .models import Article
+
+
+class ArticleListView(LoginRequiredMixin, ListView): # new
+    model = Article
+    template_name = 'article_list.html'
+
+
+class ArticleDetailView(LoginRequiredMixin, DetailView): # new
+    model = Article
+    template_name = 'article_detail.html'
+
+
+class ArticleUpdateView(LoginRequiredMixin, UpdateView): # new
+    model = Article
+    fields = ('title', 'body',)
+    template_name = 'article_edit.html'
+
+
+class ArticleDeleteView(LoginRequiredMixin, DeleteView): # new
+    model = Article
+    template_name = 'article_delete.html'
+    success_url = reverse_lazy('article_list')
+
+class ArticleCreateView(LoginRequiredMixin, CreateView):
+    model = Article
+    template_name = 'article_new.html'
+    fields = ('title', 'body',)
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+</code></pre>
+<ul>
+<li>Probar el enlace para crear nuevos mensajes de nuevo: http://127.0.0.1:8000/articles/new/.<ul>
+<li>Ahora redirige a los usuarios a la página de acceso. Tal como se deseaba.</li>
+</ul>
+</li>
+</ul>
+<h2 id="154-actualizando-las-vistas">15.4 Actualizando las vistas<a class="headerlink" href="#154-actualizando-las-vistas" title="Permanent link">¶</a></h2>
+<p>Estamos progresando, pero todavía existe el problema de nuestras vistas de edición y borrado. Cualquier usuario conectado puede hacer cambios en cualquier artículo. Lo que queremos es restringir este acceso para que sólo el autor de un artículo tenga este permiso.
+Podríamos añadir lógica de permisos a cada vista para esto, pero una solución más elegante es crear un mixin dedicado, una clase con una característica particular que queremos reutilizar en nuestro código Django. O mejor aún, Django viene con un mixin incorporado, <code>UserPassesTestMixin</code>, ¡sólo para este propósito!</p>
+<ul>
+<li>Restringir el acceso a las vistas es sólo cuestión de añadir <code>LoginRequiredMixin</code> al principio de todas las vistas existentes y especificar el <code>login_url</code> correcto.</li>
+<li>Actualizar el resto de las vistas de los artículos ya que no se desea que un usuario pueda crear, leer, actualizar o borrar un mensaje si no está conectado.</li>
+<li>El archivo completo <code>views.py</code> debería tener ahora este aspecto:</li>
+</ul>
+<p>FICHERO: <code>articles/views.py</code></p>
+<pre><code class="language-python">from django.contrib.auth.mixins import (
+    LoginRequiredMixin,
+    UserPassesTestMixin # new
+)
+from django.views.generic import ListView, DetailView
+from django.views.generic.edit import UpdateView, DeleteView, CreateView
+from django.urls import reverse_lazy
+from .models import Article
+
+`...`
+
+class ArticleUpdateView(
+    LoginRequiredMixin, UserPassesTestMixin, UpdateView): # new
+    model = Article
+    fields = ('title', 'body',)
+    template_name = 'article_edit.html'
+
+    def test_func(self): # new
+        obj = self.get_object()
+        return obj.author == self.request.user
+
+class ArticleDeleteView(
+    LoginRequiredMixin, UserPassesTestMixin, DeleteView): # new
+    model = Article
+    template_name = 'article_delete.html'
+    success_url = reverse_lazy('article_list')
+
+    def test_func(self): # new
+        obj = self.get_object()
+        return obj.author == self.request.user
+`...`
+</code></pre>
+<ul>
+<li>Jugar con el sitio para confirmar que las redirecciones de acceso ahora funcionan como se esperaba.</li>
+</ul>
+<h2 id="conclusion">Conclusión<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h2>
+<ul>
+<li>La aplicación para el periódico está casi terminada. <ul>
+<li>Artículos correctamente configurados</li>
+<li>Establecidos permisos y autorizaciones</li>
+<li>La autentificación de los usuarios está en buen estado.</li>
+</ul>
+</li>
+<li>Queda:<ul>
+<li>Añadir la posibilidad de que otros usuarios conectados dejen comentarios</li>
+</ul>
+</li>
+</ul>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.b78d2936.min.js"></script>
+<script src="../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
+</html>

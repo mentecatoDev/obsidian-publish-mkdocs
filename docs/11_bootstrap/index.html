@@ -1,0 +1,815 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../10_autenticacion_de_usuarios/" rel="prev"/>
+<link href="../12_cambio_y_restauracion_de_contrasenas/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.1" name="generator"/>
+<title>11. Bootstrap - obsidian-mkdocs template</title>
+<link href="../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="pink" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#11-bootstrap">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="obsidian-mkdocs template" class="md-header__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            obsidian-mkdocs template
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              11. Bootstrap
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="pink" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="pink" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="obsidian-mkdocs template" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    obsidian-mkdocs template
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Obsidian Notes
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Features
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/LaTeX%20Math%20Support/">
+        LaTeX Math Support
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/Mermaid%20Diagrams/">
+        Mermaid diagrams
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/Text%20Formatting/">
+        Text Formatting
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Topic 1
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Topic 1
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Topic%201/Note%201/">
+        Note 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Topic%201/Note%202/">
+        Note 2
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Docs
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Docs
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+        Django
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../00_por_que_django/">
+        ¿Por qué Django?
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01_introduccion/">
+        1 Introducción
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02_configuracion_inicial/">
+        2 Configuración inicial
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03_hello_world_app/">
+        3. Hello World
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../04_pages_app/">
+        4 Pages app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../05_message_board_app/">
+        5. Message Board app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../06_blog_app/">
+        6. Blog app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../07_formularios/">
+        7. Formularios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../08_cuentas_de_usuarios/">
+        8. Cuentas de Usuarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../09_modelo_de_usuario_personalizado/">
+        9. Modelo de usuario personalizado
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10_autenticacion_de_usuarios/">
+        10. Autenticación de usuarios
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          11. Bootstrap
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        11. Bootstrap
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#111-pages-app">
+    11.1. Pages app
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#112-tests">
+    11.2. Tests
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#113-bootstrap">
+    11.3. Bootstrap
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#114-formulario-de-inscripcion">
+    11.4. Formulario de inscripción
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#115-proximos-pasos">
+    11.5. Próximos pasos
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../12_cambio_y_restauracion_de_contrasenas/">
+        12. Cambio y Restauración de Contraseñas
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../13_email/">
+        13. Correo electrónico
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../14_newspaper_app/">
+        14. Newspaper app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../15_permisos_y_autorizacion/">
+        15. Permisos y Autorización
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../16_comentarios/">
+        16. Comentarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../17_docker/">
+        17. Docker
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../18_postgresql/">
+        18. PostgreSQL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../19_/">
+        19. Proyecto Bookstore
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../20_/">
+        Chapter 4: Pages App
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../21/">
+        21
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../22/">
+        22
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../23/">
+        23
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../24/">
+        24
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../25/">
+        25
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../26/">
+        26
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../27/">
+        27
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../30/">
+        30
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../31/">
+        31
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../32/">
+        32
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../33/">
+        33
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../34/">
+        34
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../35/">
+        35
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../36/">
+        36
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../conclusion/">
+        Conclusión
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../correo_en_django/">
+        Documentación Django
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../la_api_de_sendgrid/">
+        La API de SendGrid
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#111-pages-app">
+    11.1. Pages app
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#112-tests">
+    11.2. Tests
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#113-bootstrap">
+    11.3. Bootstrap
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#114-formulario-de-inscripcion">
+    11.4. Formulario de inscripción
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#115-proximos-pasos">
+    11.5. Próximos pasos
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="11-bootstrap">11. Bootstrap<a class="headerlink" href="#11-bootstrap" title="Permanent link">¶</a></h1>
+<p>El desarrollo de la web requiere de muchas habilidades. No sólo hay que programar un sitio web para que funcione correctamente, los usuarios también esperan que se vea bien. Cuando se está creando todo desde cero, puede ser abrumador añadir también todo el HTML/CSS necesario para un sitio atractivo.</p>
+<p>Afortunadamente está <strong><a href="https://getbootstrap.com/">Bootstrap</a></strong> , el framework más popular para construir proyectos <em>responsivos</em> y para móviles (aunque también podríamos contar con <strong><a href="https://tailwindcss.com/">Tailwind CSS</a></strong>). En lugar de escribir nuestro propio CSS y JavaScript para las características comunes de diseño de sitios web, podemos confiar en Bootstrap para hacer el trabajo pesado. Esto significa que con sólo una pequeña cantidad de código de nuestra parte podemos tener rápidamente sitios web de gran apariencia. Y si queremos hacer cambios personalizados a medida que el proyecto avanza, también es fácil anular Bootstrap cuando sea necesario.</p>
+<p>Cuando centrarse en la funcionalidad de un proyecto, y no en el diseño, es lo importante, Bootstrap es una gran elección.</p>
+<h2 id="111-pages-app">11.1. Pages app<a class="headerlink" href="#111-pages-app" title="Permanent link">¶</a></h2>
+<p>Hasta ahora se muestra la página de inicio incluyendo la lógica de la vista en el archivo <code>urls.py</code>. Aunque este enfoque funciona, es una triquiñuela y ciertamente no escala a medida que un sitio web crece con el tiempo. También es probablemente algo confuso para los recién llegados a Django. En su lugar se puede y debe crear una aplicación de páginas dedicadas para todas las <strong>páginas estáticas</strong>. Esto mantendrá el código bien organizado en el futuro. En la línea de comandos usar el comando <code>startapp</code> para crear la aplicación <code>pages</code>.</p>
+<pre><code class="language-bash">(news) $ python manage.py startapp pages
+</code></pre>
+<p>Recordar actualizar inmediatamente el archivo <code>settings.py</code>.</p>
+<p>FICHERO: <code>newspaper_project/settings.py</code></p>
+<pre><code class="language-python">INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'accounts.apps.AccountsConfig',
+    'pages.apps.PagesConfig',                             # new
+]
+</code></pre>
+<p>Ahora se puede actualizar el archivo <code>urls.py</code> a nivel de proyecto. Eliminar el <code>import</code> de <code>TemplateView</code>. También se actualizará la ruta <code>''</code> para incluir las páginas de la aplicación.</p>
+<p>FICHERO: <code>newspaper_project/urls.py</code></p>
+<pre><code class="language-python">from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('accounts/', include('accounts.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('', include('pages.urls')),                      # new
+]
+</code></pre>
+<p>Es hora de añadir la página web, lo cual significa hacer el baile estándar de <em>urls/views/templates</em> de Django.</p>
+<pre><code class="language-bash">(news) $ touch pages/urls.py
+</code></pre>
+<p>Luego importar las vistas aún no creadas, establecer las rutas y asegurarse de nombrar cada url, también.</p>
+<p>FICHERO: <code>pages/urls.py</code></p>
+<pre><code class="language-python">from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('', views.HomePageView.as_view(), name='home'),
+]
+</code></pre>
+<p>El código de <code>views.py</code> debería resultar familiar a estas alturas. Se usa la vista genérica basada en clases <code>TemplateView</code> de Django, lo que significa que sólo habrá que especificar el <code>template_name</code> para usarlo.</p>
+<p>FICHERO: <code>pages/views.py</code></p>
+<pre><code class="language-python">from django.views.generic import TemplateView
+
+
+class HomePageView(TemplateView):
+    template_name = 'home.html'
+</code></pre>
+<p>Ya existe una plantilla <code>home.html</code>. Confirmar que sigue funcionando como se esperaba con la nueva url y vista.</p>
+<h2 id="112-tests">11.2. Tests<a class="headerlink" href="#112-tests" title="Permanent link">¶</a></h2>
+<p>Hay dos momentos ideales para añadir pruebas
+- Antes de escribir cualquier código (test-driven-development)
+- Inmediatamente después de que se haya añadido una nueva funcionalidad y aún esté clara en la mente.</p>
+<p>Actualmente el proyecto tiene cuatro páginas:</p>
+<ul>
+<li><code>home</code></li>
+<li><code>signup</code></li>
+<li><code>login</code></li>
+<li><code>logout</code></li>
+</ul>
+<p>Sólo se necesita probar las dos primeras. <code>login</code> y <code>logut</code> que son parte de Django y ya tienen cobertura de tests.</p>
+<p>FICHERO: <code>pages/tests.py</code></p>
+<pre><code class="language-python">from django.contrib.auth import get_user_model
+from django.test import SimpleTestCase, TestCase
+from django.urls import reverse
+
+
+class HomePageTests(SimpleTestCase):
+
+    def test_home_page_status_code(self):
+        response = self.client.get('/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_view_url_by_name(self):
+        response = self.client.get(reverse('home'))
+        self.assertEqual(response.status_code, 200)
+
+    def test_view_uses_correct_template(self):
+        response = self.client.get(reverse('home'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'home.html')
+
+
+class SignupPageTests(TestCase):
+    username = 'newuser'
+    email = 'newuser@email.com'
+
+    def test_signup_page_status_code(self):
+        response = self.client.get('/accounts/signup/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_view_url_by_name(self):
+        response = self.client.get(reverse('signup'))
+        self.assertEqual(response.status_code, 200)
+
+    def test_view_uses_correct_template(self):
+        response = self.client.get(reverse('signup'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'registration/signup.html')
+
+    def test_signup_form(self):
+        new_user = get_user_model().objects.create_user(
+            self.username, self.email)
+        self.assertEqual(get_user_model().objects.all().count(), 1)
+        self.assertEqual(get_user_model().objects.all()
+                         [0].username, self.username)
+        self.assertEqual(get_user_model().objects.all()
+                         [0].email, self.email)
+</code></pre>
+<ul>
+<li>En la línea superior se usa <code>get_user_model()</code> para referirse al modelo de usuario personalizado.</li>
+<li>Luego para ambas páginas se prueban tres cosas:</li>
+<li>Si la página existe y devuelve un código de estado HTTP 200</li>
+<li>Si la página utiliza el nombre de la url correcta en la vista</li>
+<li>Si se está utilizando la plantilla adecuada</li>
+<li>La página de registro también tiene un formulario, así que se debería probar eso también.</li>
+<li>En el formulario <code>test_signup_form</code> se está verificando que cuando un nombre de usuario y una dirección de correo electrónico son POSTeados (enviados a la base de datos), coinciden con lo que se almacena en el modelo <code>CustomUser</code>.</li>
+<li>Ten en cuenta que hay dos formas de especificar una página: o bien codificando como en <code>test_signup_page_-status_code</code> donde establecemos la respuesta a <code>/accounts/signup/</code> o a través del nombre de la URL de <code>signup</code> como se hace en <code>test_view_url_by_name</code> y <code>test_view_uses_correct_template</code>.</li>
+<li>Ejecutar:</li>
+</ul>
+<pre><code class="language-bash">(news) $ python manage.py test
+</code></pre>
+<h2 id="113-bootstrap">11.3. Bootstrap<a class="headerlink" href="#113-bootstrap" title="Permanent link">¶</a></h2>
+<p>Si no has utilizado nunca Bootstrap, estás ante una auténtica maravilla. Al igual que Django, consigue
+mucho con muy poco código.</p>
+<p>Hay dos maneras de añadir <em>Bootstrap</em> a un proyecto:</p>
+<ul>
+<li>Se pueden descargar todos los archivos y servirlos localmente</li>
+<li>Confiar en una Red de Entrega de Contenido (CDN <em>Content Delivery Network</em>)</li>
+</ul>
+<p>El segundo enfoque es más sencillo de implementar siempre que se tenga una conexión a Internet consistente, así que eso es lo que se usará aquí.</p>
+<p><em>Bootstrap</em> viene con una plantilla inicial que incluye los archivos básicos necesarios. En particular, hay cuatro que se incorporarán:</p>
+<ul>
+<li><code>Bootstrap.css</code></li>
+<li><code>jQuery.js</code></li>
+<li><code>Popper.js</code></li>
+<li><code>Bootstrap.js</code></li>
+</ul>
+<p>FICHERO: <code>templates/base.html</code></p>
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;!-- Required meta tags --&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+
+    &lt;!-- Bootstrap CSS --&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"&gt;
+
+    &lt;title&gt;Hello, world!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+
+    &lt;!-- Optional JavaScript; choose one of the two! --&gt;
+
+    &lt;!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) --&gt;
+    &lt;script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"&gt;&lt;/script&gt;
+
+    &lt;!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    &lt;script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"&gt;&lt;/script&gt;
+    --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Este fragmento de código incluye los enlaces completos de Bootstrap CSS y JavaScript. Está actualizado a 23/02/2021 pero se puede encontrar la última versión en los <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/#quick-start">documentos de inicio rápido</a>.</p>
+<p>Se añade ahora:</p>
+<ul>
+<li>
+<p>Una barra de navegación en la parte superior de la página que contiene los enlaces para:</p>
+<ul>
+<li>la página de inicio</li>
+<li>inicio de sesión</li>
+<li>cierre de sesión</li>
+<li>registro.</li>
+</ul>
+</li>
+<li>
+<p>En particular, se pueden usar las etiquetas <code>if/else</code> en el motor de plantillas de Django para añadir algo de lógica básica. Se quiere mostrar un botón de "login" y "signup" a los usuarios que han cerrado la sesión, pero un botón de "logout" y "cambiar contraseña" a los usuarios que han iniciado la sesión.</p>
+</li>
+</ul>
+<p>FICHERO: <code>templates/base.html</code></p>
+<pre><code class="language-html">&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;!-- Required meta tags --&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+
+    &lt;!-- Bootstrap CSS --&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"&gt;
+
+    &lt;title&gt;{% block title %}Newspaper App{% endblock title %}&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;nav class="navbar navbar-expand-lg navbar-dark bg-dark"&gt;
+      &lt;a class="navbar-brand" href="{% url 'home' %}"&gt;Newspaper&lt;/a&gt;
+      &lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"&gt;
+        &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;div class="collapse navbar-collapse" id="navbarSupportedContent"&gt;
+        {% if user.is_authenticated %}
+          &lt;ul class="navbar-nav ml-auto"&gt;
+            &lt;li class="nav-item"&gt;
+              &lt;a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+                {{ user.username }}
+              &lt;/a&gt;
+              &lt;div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdown"&gt;
+                &lt;a class="dropdown-item" href="{% url 'password_change'%}"&gt;Cambiar contraseña&lt;/a&gt;
+                &lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+                &lt;a class="dropdown-item" href="{% url 'logout' %}"&gt;Logout&lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        {% else %}
+          &lt;form class="form-inline ml-auto"&gt;
+            &lt;a href="{% url 'login' %}" class="btn btn-outline-secondary"&gt;Login&lt;/a&gt;
+            &lt;a href="{% url 'signup' %}" class="btn btn-primary ml-2"&gt;Registrar&lt;/a&gt;
+          &lt;/form&gt;
+        {% endif %}
+      &lt;/div&gt;
+    &lt;/nav&gt;
+
+    &lt;main&gt;
+      &lt;div class="container"&gt;
+        {% block content %}
+        {% endblock content %}
+      &lt;/div&gt;
+    &lt;/main&gt;
+
+
+    &lt;!-- Optional JavaScript; choose one of the two! --&gt;
+
+    &lt;!-- Option 1: jQuery and Bootstrap Bundle (includes Popper)
+    &lt;script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"&gt;&lt;/script&gt;
+    --&gt;
+
+    &lt;!-- Option 2: jQuery, Popper.js, and Bootstrap JS --&gt;
+    &lt;script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Lo único a mejorar es el botón de "Login". Se puede usar Bootstrap para añadir un estilo agradable, como hacerlo verde y atractivo.</p>
+<p>FICHERO: <code>templates/registration/login.html</code></p>
+<pre><code class="language-html">...
+  &lt;button class="btn btn-success ml-2" type="submit"&gt;Login&lt;/button&gt;
+...
+</code></pre>
+<h2 id="114-formulario-de-inscripcion">11.4. Formulario de inscripción<a class="headerlink" href="#114-formulario-de-inscripcion" title="Permanent link">¶</a></h2>
+<p>¿De dónde vino ese texto? Cuando algo se siente "mágico" en Django, seguro que no lo es.</p>
+<p>El método más rápido para averiguar lo que ocurre bajo el capó de Django es simplemente ir al código fuente de Django en Github, usar la barra de búsqueda e intentar encontrar el trozo de texto específico.</p>
+<p>Por ejemplo, si se busca "150 characters or fewer" se encontrará en la página <code>django/contrib/auth/models.py</code> que se encuentra ahí en la línea 334. El texto viene como parte de la app <code>auth</code>, en el campo de nombre de usuario de <code>AbstractUser</code>.</p>
+<p>Ahora hay tres opciones:
+- anular el <code>help_text</code> existente
+- ocultar el <code>help_text</code>
+- reestilar el <code>help_text</code></p>
+<p>Se escogerá la tercera opción ya que es una buena manera de introducir el excelente paquete de terceros <code>django-crispy-forms</code>. Trabajar con formularios es un reto y <code>django-crispy-forms</code> hace más fácil escribir código <em>DRY</em> (Don't Repeat Yourself).</p>
+<pre><code class="language-bash">(news) $ pipenv install django-crispy-forms
+</code></pre>
+<ul>
+<li>Añadir la nueva aplicación a la lista <code>INSTALLED_APPS</code> en el archivo <code>settings.py</code></li>
+<li>A medida que el número de aplicaciones comienza a crecer, es útil distinguir entre aplicaciones de terceros y aplicaciones locales que se han añadido. </li>
+</ul>
+<p>FICHERO: <code>newspaper_project/settings.py</code></p>
+<pre><code class="language-python">INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+
+    # 3rd Party
+    'crispy_forms',
+
+    # Local
+    'accounts.apps.AccountsConfig',
+    'pages.apps.PagesConfig',
+]
+</code></pre>
+<p>Ya que se está usando <code>Bootstrap4</code> también se debería añadir esa configuración al archivo <code>settings.py</code>. Esto va en la parte inferior del archivo.</p>
+<p>FICHERO: <code>newspaper_project/settings.py</code></p>
+<pre><code class="language-python">CRISPY_TEMPLATE_PACK = 'bootstrap4'
+</code></pre>
+<p>Ahora en la plantilla de <code>signup.html</code> se puede usar rápidamente formularios crujientes (<em>crispy forms</em>). Primero se cargan las etiquetas <code>crispy_forms_tags</code> en la parte superior y luego se intercambia <code>{{ form.as_p }}</code> por <code>{{ form|crispy }}</code>.</p>
+<p>FICHERO: <code>templates/signup.html</code></p>
+<pre><code class="language-html">{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Registro{% endblock %}
+
+{% block content %}
+  &lt;h2&gt;Registro&lt;/h2&gt;
+  &lt;form method="post"&gt;
+    {% csrf_token %}
+    {{ form|crispy }}
+    &lt;button type="submit"&gt;Registrarse&lt;/button&gt;
+  &lt;/form&gt;
+{% endblock content %}
+</code></pre>
+<p>Mucho mejor. Aunque, ¿qué tal si el botón de "Registrarse" fuera un poco más atractivo?¿Quizás hacerlo verde? Bootstrap tiene todo tipo de opciones de estilo de botones donde elegir. Se usará el "exitoso" fondo verde con texto blanco.</p>
+<p>FICHERO: <code>templates/signup.html</code></p>
+<pre><code class="language-html">...
+&lt;button class="btn btn-success" type="submit"&gt;Registrarse&lt;/button&gt;
+...
+</code></pre>
+<h2 id="115-proximos-pasos">11.5. Próximos pasos<a class="headerlink" href="#115-proximos-pasos" title="Permanent link">¶</a></h2>
+<p>El último paso del flujo de autentificación de usuarios es configurar el cambio y el restablecimiento de la contraseña. Una vez más Django se ha encargado del trabajo pesado, así que solo se requiere una cantidad mínima de código adicional.</p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.b78d2936.min.js"></script>
+<script src="../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
+</html>

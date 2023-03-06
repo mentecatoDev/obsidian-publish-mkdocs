@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../11_bootstrap/" rel="prev"/>
+<link href="../13_email/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.1" name="generator"/>
+<title>12. Cambio y Restauración de Contraseñas - obsidian-mkdocs template</title>
+<link href="../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="pink" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#12-cambio-y-restauracion-de-contrasenas">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="obsidian-mkdocs template" class="md-header__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            obsidian-mkdocs template
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              12. Cambio y Restauración de Contraseñas
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="pink" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="pink" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="obsidian-mkdocs template" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    obsidian-mkdocs template
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Obsidian Notes
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Features
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/LaTeX%20Math%20Support/">
+        LaTeX Math Support
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/Mermaid%20Diagrams/">
+        Mermaid diagrams
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/Text%20Formatting/">
+        Text Formatting
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Topic 1
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Topic 1
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Topic%201/Note%201/">
+        Note 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Topic%201/Note%202/">
+        Note 2
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Docs
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Docs
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+        Django
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../00_por_que_django/">
+        ¿Por qué Django?
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01_introduccion/">
+        1 Introducción
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02_configuracion_inicial/">
+        2 Configuración inicial
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03_hello_world_app/">
+        3. Hello World
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../04_pages_app/">
+        4 Pages app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../05_message_board_app/">
+        5. Message Board app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../06_blog_app/">
+        6. Blog app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../07_formularios/">
+        7. Formularios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../08_cuentas_de_usuarios/">
+        8. Cuentas de Usuarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../09_modelo_de_usuario_personalizado/">
+        9. Modelo de usuario personalizado
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10_autenticacion_de_usuarios/">
+        10. Autenticación de usuarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11_bootstrap/">
+        11. Bootstrap
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          12. Cambio y Restauración de Contraseñas
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        12. Cambio y Restauración de Contraseñas
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#121-cambio-de-contrasena">
+    12.1. Cambio de contraseña
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#122-personalizar-el-cambio-de-contrasena">
+    12.2. Personalizar el cambio de contraseña
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#123-restablecer-la-contrasena">
+    12.3. Restablecer la contraseña
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#124-plantillas-personalizadas">
+    12.4. Plantillas personalizadas
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#125-conclusion">
+    12.5. Conclusión
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../13_email/">
+        13. Correo electrónico
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../14_newspaper_app/">
+        14. Newspaper app
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../15_permisos_y_autorizacion/">
+        15. Permisos y Autorización
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../16_comentarios/">
+        16. Comentarios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../17_docker/">
+        17. Docker
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../18_postgresql/">
+        18. PostgreSQL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../19_/">
+        19. Proyecto Bookstore
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../20_/">
+        Chapter 4: Pages App
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../21/">
+        21
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../22/">
+        22
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../23/">
+        23
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../24/">
+        24
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../25/">
+        25
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../26/">
+        26
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../27/">
+        27
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../30/">
+        30
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../31/">
+        31
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../32/">
+        32
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../33/">
+        33
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../34/">
+        34
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../35/">
+        35
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../36/">
+        36
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../conclusion/">
+        Conclusión
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../correo_en_django/">
+        Documentación Django
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../la_api_de_sendgrid/">
+        La API de SendGrid
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#121-cambio-de-contrasena">
+    12.1. Cambio de contraseña
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#122-personalizar-el-cambio-de-contrasena">
+    12.2. Personalizar el cambio de contraseña
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#123-restablecer-la-contrasena">
+    12.3. Restablecer la contraseña
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#124-plantillas-personalizadas">
+    12.4. Plantillas personalizadas
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#125-conclusion">
+    12.5. Conclusión
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="12-cambio-y-restauracion-de-contrasenas">12. Cambio y Restauración de Contraseñas<a class="headerlink" href="#12-cambio-y-restauracion-de-contrasenas" title="Permanent link">¶</a></h1>
+<p>Así como Django viene con vistas y urls incorporadas para el inicio y cierre de sesión, también viene con vistas/urls para el cambio y el restablecimiento de la contraseña.</p>
+<p>Inicialmente implementaremos las vistas y URLs integradas en Django tanto para el cambio de contraseña como para el cambio de contraseña antes de personalizarlas con nuestras propias plantillas y servicios de correo electrónico basados en Bootstrap.</p>
+<h2 id="121-cambio-de-contrasena">12.1. Cambio de contraseña<a class="headerlink" href="#121-cambio-de-contrasena" title="Permanent link">¶</a></h2>
+<p>Django proporciona una implementación predeterminada que ya funciona para este cometido.</p>
+<p>Para probarlo:</p>
+<ul>
+<li>Hacer clic en el botón "Login" para asegurar que se ha iniciado sesión.</li>
+<li>Luego navegar a la página "Password change" en http://127.0.0.1:8000/accounts/password_change/</li>
+<li>Introducir la antigua contraseña y luego una nueva. Luego hacer clic en el botón "Change My Password".</li>
+<li>Se será redirigido a la página "Password change successful" ubicada en:
+http://127.0.0.1:8000/accounts/password_change/done/.</li>
+</ul>
+<h2 id="122-personalizar-el-cambio-de-contrasena">12.2. Personalizar el cambio de contraseña<a class="headerlink" href="#122-personalizar-el-cambio-de-contrasena" title="Permanent link">¶</a></h2>
+<p>Se van a personalizar estas dos páginas de cambio de contraseña para que coincidan con el aspecto y la sensación del sitio del periódico.</p>
+<p>Dado que Django ya ha creado las vistas y las URL, sólo hay que añadir nuevas plantillas.</p>
+<p>Crear dos nuevos archivos de plantillas en la carpeta de registro.</p>
+<pre><code class="language-bash">(news) $ touch templates/registration/password_change_form.html
+(news) $ touch templates/registration/password_change_done.html
+</code></pre>
+<p>Actualiza password_change_form.html con el siguiente código.</p>
+<p>FICHERO: <code>templates/registration/password_change_form.html</code></p>
+<pre><code class="language-html">{% extends 'base.html' %}
+
+{% block title %}Cambio de Contraseña{% endblock %}
+
+{% block content %}
+  &lt;h1&gt;Cambio de Contraseña&lt;/h1&gt;
+  &lt;p&gt;Introduzca su antigua contraseña, por seguridad, y luego la nueva dos veces para verificar que se ha escrito correctamente.&lt;/p&gt;
+  &lt;form method="POST"&gt;
+    {% csrf_token %}
+    {{ form.as_p }}
+    &lt;input class="btn btn-success" type="submit" value="Cambiar Contraseña"&gt;
+  &lt;/form&gt;
+{% endblock %}
+</code></pre>
+<p>En la parte superior se extiende <code>base.html</code> y se fija el título de la página. Debido a que se usan títulos "blocks" en el archivo <code>base.html</code> se puede prescindir de ellos aquí. El formulario usa POST ya que se están enviando datos y un <code>csrf_token</code> por razones de seguridad. Usando <code>form.as_p</code> estamos simplemente mostrando en párrafos el contenido del formulario de restablecimiento de contraseña por defecto. Y finalmente incluimos un botón de envío que usa el estilo <code>btn btn-success</code> de Bootstrap para que sea verde.</p>
+<p>Lo siguiente es la plantilla <code>password_change_done</code>.</p>
+<p>FICHERO: <code>templates/registration/password_change_done.html</code></p>
+<pre><code class="language-html">{% extends 'base.html' %}
+
+{% block title %}Cambio de contraseña exitoso{% endblock %}
+
+{% block content %}
+  &lt;h1&gt;Cambio de contraseña exitoso&lt;/h1&gt;
+  &lt;p&gt;Su contraseña ha cambiado.&lt;/p&gt;
+{% endblock content %}
+</code></pre>
+<p>También se extiende <code>base.html</code> y se incluye un nuevo título. Sin embargo, no hay ningún formulario en la página, sólo texto nuevo.</p>
+<p>La nueva página está en http://127.0.0.1:8000/accounts/password_change/done/.</p>
+<h2 id="123-restablecer-la-contrasena">12.3. Restablecer la contraseña<a class="headerlink" href="#123-restablecer-la-contrasena" title="Permanent link">¶</a></h2>
+<p>La única configuración que se requiere es decirle a Django cómo enviar los correos electrónicos. Después de todo, un usuario sólo puede restablecer una contraseña si se tiene acceso al correo electrónico vinculado a la cuenta. En producción se usará el servicio de correo electrónico <code>SendGrid</code> para enviar realmente los correos electrónicos, pero para fines de prueba se puede confiar en la configuración del backend de la consola de Django que envía el texto del correo electrónico a la consola de línea de comandos en su lugar.</p>
+<p>En la parte inferior del archivo <code>settings.py</code> hacer el siguiente cambio de una línea.</p>
+<p>FICHERO: <code>newspaper_project/settings.py</code></p>
+<pre><code class="language-python">EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+</code></pre>
+<p>Listo. Django se encargará del resto. Probar desde http://127.0.0.1:8000/accounts/password_reset/.</p>
+<p>Asegurar que la dirección de correo electrónico coincida con una de las cuentas de usuario. Una vez enviado, se será redirigido a la página de restablecimiento de contraseña en http://127.0.0.1:8000/accounts/password_reset/done/ que informa de que se revise el correo electrónico. Ya que se le ha dicho a Django que envíe correos electrónicos a la consola de la línea de comando, el texto del correo electrónico estará ahora allí. Esto es lo que se muestra por consola:</p>
+<pre><code class="language-text">Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: =?utf-8?q?Contrase=C3=B1a_restablecida_en_127=2E0=2E0=2E1=3A8000?=
+From: webmaster@localhost
+To: testuser2@gmail.com
+Date: Wed, 24 Feb 2021 19:08:41 -0000
+Message-ID: &lt;161419372146.227460.6264007619116440451@padre&gt;
+
+
+Ha recibido este correo electrónico porque ha solicitado restablecer la contraseña para su cuenta en 127.0.0.1:8000.
+
+Por favor, vaya a la página siguiente y escoja una nueva contraseña.
+
+http://127.0.0.1:8000/accounts/reset/NA/ail96h-fc019327b99befed62950c6dc526e12b/
+
+Su nombre de usuario, en caso de que lo haya olvidado: testuser2
+
+¡Gracias por usar nuestro sitio!
+
+El equipo de 127.0.0.1:8000
+</code></pre>
+<p>El texto del correo electrónico debe ser idéntico excepto por tres líneas:
+- El "To:" en la sexta línea contiene la dirección de correo electrónico del usuario
+- El enlace URL contiene una señal segura que Django genera aleatoriamente y puede ser usada sólo una vez
+- Django recuerda amablemente el nombre de usuario</p>
+<ul>
+<li>El enlace proporcionado: http://127.0.0.1:8000/users/reset/MQ/4up-678712c114db2ead7780/, conduce a la "change password page".</li>
+<li>Introducir una nueva contraseña y hacer clic en el botón "Change my password". El paso final es ser redirigido a la página de "Password reset complete". </li>
+</ul>
+<p>Comprobar que todo ha funcionado, hacer clic en el enlace "Login" y usar la nueva contraseña.</p>
+<h2 id="124-plantillas-personalizadas">12.4. Plantillas personalizadas<a class="headerlink" href="#124-plantillas-personalizadas" title="Permanent link">¶</a></h2>
+<p>Sólo hay que crear nuevas plantillas para personalizar el aspecto y la sensación del restablecimiento de la contraseña.</p>
+<p>Crear cuatro nuevos archivos de plantilla:</p>
+<pre><code class="language-bash">(news) $ touch templates/registration/password_reset_form.html
+(news) $ touch templates/registration/password_reset_done.html
+(news) $ touch templates/registration/password_reset_confirm.html
+(news) $ touch templates/registration/password_reset_complete.html
+</code></pre>
+<p>Se empieza con el formulario de restablecimiento de contraseña que es <code>password_reset_form.html</code>.</p>
+<p>FICHERO: <code>templates/registration/password_reset_form.html</code></p>
+<pre><code class="language-html">{% extends 'base.html' %}
+
+{% block title %}¿Olvidó su contraseña?{% endblock %}
+
+{% block content %}
+&lt;h1&gt;¿Olvidó su contraseña?&lt;/h1&gt;
+&lt;p&gt;Introduzca su dirección de correo electrónico y recibirá instrucciones para establecer una nueva.&lt;/p&gt;
+&lt;form method="POST"&gt;
+  {% csrf_token %}
+  {{ form.as_p }}
+  &lt;input class="btn btn-success" type="submit" value="¡Envíenme instrucciones!"&gt;
+&lt;/form&gt;
+{% endblock content %}
+</code></pre>
+<p>En la parte superior se extiende <code>base.html</code> y se fija el título de la página. Debido a que usamos títulos "block" en el <code>base.html</code> se pueden anular aquí.</p>
+<ul>
+<li>El formulario usa POST ya que se están enviando datos y un <code>csrf_token</code> por razones de seguridad.</li>
+<li>Al usar <code>form.as_p</code> simplemente se está mostrando en párrafos el contenido del formulario de restablecimiento de la contraseña predeterminada.</li>
+<li>
+<p>Finalmente se incluye un enviar el botón y se usa el estilo de Bootstrap <code>btn btn-success</code> para hacerlo verde.</p>
+</li>
+<li>
+<p>Ahora se puede actualizar las otras tres páginas. Cada una tiene la misma forma de extender
+<code>base.html</code>, un nuevo título, un nuevo texto de contenido, y para "password reset confirm" una actualización también.</p>
+</li>
+</ul>
+<p>FICHERO: <code>templates/registration/password_reset_done.html</code></p>
+<pre><code class="language-html">{% extends 'base.html' %}
+
+{% block title %}Correo electrónico enviado{% endblock %}
+
+{% block content %}
+  &lt;h1&gt;Compruebe su buzón de correo electrónico&lt;/h1&gt;
+  &lt;p&gt;Se le ha enviado instrucciones para establecer su nueva contraseña.&lt;br&gt;
+     ¡Debería recibir el correo electrónico en breve!.&lt;/p&gt;
+{% endblock content %}
+</code></pre>
+<p>Confirmar los cambios en http://127.0.0.1:8000/accounts/password_reset/done/</p>
+<p>A continuación, la página de confirmación del restablecimiento de la contraseña.</p>
+<p>FICHERO: <code>templates/registration/password_reset_confirm.html</code></p>
+<pre><code class="language-html">{% extends 'base.html' %}
+
+{% block title %}Introducir nueva contraseña{% endblock %}
+
+{% block content %}
+&lt;h1&gt;¡Establezca una nueva contraseña!&lt;/h1&gt;
+&lt;form method="POST"&gt;
+  {% csrf_token %}
+  {{ form.as_p }}
+  &lt;input class="btn btn-success" type="submit" value="Cambiar Contraseña"&gt;
+&lt;/form&gt;
+{% endblock content %}
+</code></pre>
+<p>Abrir la linea de comandos y tomar el enlace URL del correo electrónico enviado a la consola.</p>
+<p>Finalmente aquí está el código completo para restablecer el password.</p>
+<p>FICHERO: <code>templates/registration/password_reset_complete.html</code></p>
+<pre><code class="language-html">{% extends 'base.html' %}
+
+{% block title %}Restablecimiento de la contraseña completo{% endblock %}
+
+{% block content %}
+&lt;h1&gt;Restablecimiento de la contraseña completo&lt;/h1&gt;
+&lt;p&gt;Su nueva contraseña se ha restablecido. Puede logarse ahora en la página de &lt;a href="{% url 'login' %}"&gt;login&lt;/a&gt;.&lt;/p&gt;
+{% endblock content %}
+</code></pre>
+<h2 id="125-conclusion">12.5. Conclusión<a class="headerlink" href="#125-conclusion" title="Permanent link">¶</a></h2>
+<p>En el próximo capítulo se conectará <em>Newspaper</em> con el servicio de correo electrónico <em>SendGrid</em> para enviar realmente los correos electrónicos automatizados a los usuarios, en lugar de emitirlos en la consola de línea de comandos.</p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.b78d2936.min.js"></script>
+<script src="../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
+</html>
